@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 06:56:47 by teando            #+#    #+#             */
-/*   Updated: 2025/05/29 01:50:21 by teando           ###   ########.fr       */
+/*   Updated: 2025/05/30 01:08:49 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 Zombie::Zombie() : _name("") {}
 
 Zombie::Zombie(std::string name) : _name(name) {}
-
-Zombie::~Zombie() {}
 
 void Zombie::announce() const {
     std::cout << _name << " : BraiiiiiiinnnzzzZ..." << std::endl;

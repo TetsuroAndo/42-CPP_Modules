@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 06:54:23 by teando            #+#    #+#             */
-/*   Updated: 2025/05/29 01:46:16 by teando           ###   ########.fr       */
+/*   Updated: 2025/05/30 01:08:51 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ private:
 public:
 	Zombie();
 	explicit Zombie(std::string name);
-	~Zombie();
 	void announce() const;
 	void setName(const std::string &name);
 };
