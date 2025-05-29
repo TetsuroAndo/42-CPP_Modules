@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 06:58:35 by teando            #+#    #+#             */
-/*   Updated: 2025/05/28 23:41:27 by teando           ###   ########.fr       */
+/*   Updated: 2025/05/29 23:36:23 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 PhoneBook::PhoneBook() : size(0), oldest(0) {}
 
 void PhoneBook::add() {
-    Contact tmp;
+	Contact tmp;
 	if (!tmp.setContact())
 		return ;
 
@@ -26,7 +26,7 @@ void PhoneBook::add() {
 	if (size < 8)
 		++size;
 	oldest = (oldest + 1) % 8;
-    std::cout << "Contact saved!\n";
+	std::cout << "Contact saved!\n";
 }
 
 void PhoneBook::search() const {
