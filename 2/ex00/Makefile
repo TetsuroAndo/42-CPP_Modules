@@ -6,15 +6,15 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/05/29 04:36:37 by teando           ###   ########.fr        #
+#    Updated: 2025/05/30 21:24:15 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= harlFilter
+NAME	:= a.out
 CXX		:= c++
 CXXFLAG	:= -Wall -Wextra -Werror -std=c++98
 RM		:= rm -rf
-SRC		:= main.cpp Harl.cpp
+SRC		:= main.cpp Fixed.cpp
 OBJDIR	:= obj
 OBJ		:= $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 
