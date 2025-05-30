@@ -6,52 +6,53 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 03:25:07 by teando            #+#    #+#             */
-/*   Updated: 2025/05/30 22:58:04 by teando           ###   ########.fr       */
+/*   Updated: 2025/05/30 23:12:40 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+# include <iostream>
 
-int main() {
+int main( void ) {
 	Fixed a;
-	Fixed b(a);
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-
-	a.setRawBits(42);
-	std::cout << "\nAfter setting to 42: " << a.getRawBits() << std::endl;
-
-	b.setRawBits(100);
-	std::cout << "\nAfter changing copy to 100: " << b.getRawBits() << std::endl;
-	std::cout << "\nOriginal value: " << a.getRawBits() << std::endl;
-
-	a = b;
-	std::cout << "\nAfter assignment: " << a.getRawBits() << std::endl;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+	a = Fixed( 1234.4321f );
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return 0;
 }
 
 /*
 
-$ ./a.out
+$> ./a.out
 Default constructor called
+Int constructor called
+Float constructor called
 Copy constructor called
-Copy assignment operator called   // 実装によりこの行は省略される場合あり
-getRawBits member function called
-Default constructor called
 Copy assignment operator called
-getRawBits member function called
-getRawBits member function called
-0
-getRawBits member function called
-0
-getRawBits member function called
-0
+Float constructor called
+Copy assignment operator called
+Destructor called
+a is 1234.43
+b is 10
+c is 42.4219
+d is 10
+a is 1234 as integer
+b is 10 as integer
+c is 42 as integer
+d is 10 as integer
 Destructor called
 Destructor called
 Destructor called
-$
+Destructor called
+$>
 
 */
