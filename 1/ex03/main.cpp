@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 06:56:55 by teando            #+#    #+#             */
-/*   Updated: 2025/05/29 03:11:23 by teando           ###   ########.fr       */
+/*   Updated: 2025/05/30 19:20:41 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ int main() {
 		bob.attack();
 	}
 	{
-		Weapon club("crude spiked club");
+		
 		HumanB jim("Jim");
-		jim.setWeapon(club);
 		jim.attack();
+		Weapon club("crude spiked club");
+		jim.setWeapon(club);
 		club.setType("some other type of club");
 		jim.attack();
 	}
