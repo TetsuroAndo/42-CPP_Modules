@@ -6,7 +6,7 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/05/30 21:24:15 by teando           ###   ########.fr        #
+#    Updated: 2025/05/31 10:10:09 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ OBJDIR	:= obj
 OBJ		:= $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 
 all: $(NAME)
+
+run: $(NAME)
+	./$(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAG) -o $@ $^
