@@ -6,12 +6,11 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 10:02:06 by teando            #+#    #+#             */
-/*   Updated: 2025/05/30 23:17:41 by teando           ###   ########.fr       */
+/*   Updated: 2025/05/31 09:17:18 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed() : _value(0) {
 	std::cout << "Default constructor called" << std::endl;
@@ -56,4 +55,9 @@ int Fixed::getRawBits() const {
 void Fixed::setRawBits(int const raw) {
 	_value = raw;
 	std::cout << "setRawBits member function called" << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed) {
+	os << fixed.toFloat();
+	return os;
 }

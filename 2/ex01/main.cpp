@@ -6,12 +6,11 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 03:25:07 by teando            #+#    #+#             */
-/*   Updated: 2025/05/30 23:12:40 by teando           ###   ########.fr       */
+/*   Updated: 2025/05/31 09:17:23 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-# include <iostream>
 
 int main( void ) {
 	Fixed a;
