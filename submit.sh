@@ -23,7 +23,7 @@ MODULE_DIR="$ROOT_DIR/$MODULE"
   || { echo "Error: directory '$MODULE_DIR' not found." >&2; exit 1; }
 
 # 2. 空ディレクトリに .gitkeep を配置（任意）
-[[ -x "$ROOT_DIR/fillEmptyDir.sh" ]] && "$ROOT_DIR/fillEmptyDir.sh" "$MODULE_DIR"
+# [[ -x "$ROOT_DIR/fillEmptyDir.sh" ]] && "$ROOT_DIR/fillEmptyDir.sh" "$MODULE_DIR"
 
 # 3. 一時的 Git 初期化
 pushd "$MODULE_DIR" >/dev/null
