@@ -14,7 +14,7 @@ NAME	:= a.out
 CXX		:= c++
 CXXFLAG	:= -Wall -Wextra -Werror -std=c++98
 RM		:= rm -rf
-SRC		:= main.cpp Animal.cpp Cat.cpp Dog.cpp 
+SRC		:= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJDIR	:= obj
 OBJ		:= $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 
