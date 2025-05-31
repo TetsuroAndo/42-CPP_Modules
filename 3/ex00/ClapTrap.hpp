@@ -6,14 +6,14 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 11:51:57 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 11:55:14 by teando           ###   ########.fr       */
+/*   Updated: 2025/05/31 14:45:16 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
-# include <iostream>
+#include <iostream>
 
 class ClapTrap {
 private:
@@ -21,6 +21,7 @@ private:
 	int _hitPoints;
 	int _energyPoints;
 	int _attackDamage;
+
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
