@@ -6,7 +6,7 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/05/31 10:10:02 by teando           ###   ########.fr        #
+#    Updated: 2025/06/02 20:50:40 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,4 +38,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all run clean fclean re
