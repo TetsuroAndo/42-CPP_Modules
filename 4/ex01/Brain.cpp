@@ -6,8 +6,18 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:12:09 by teando            #+#    #+#             */
-/*   Updated: 2025/06/01 20:12:20 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/02 10:34:51 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
+
+Brain::Brain() {
+
+}
+
+Brain::Brain(const Brain &other) {
+	
+}
+
+Brain::

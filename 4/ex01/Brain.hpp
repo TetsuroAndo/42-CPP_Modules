@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:12:21 by teando            #+#    #+#             */
-/*   Updated: 2025/06/01 20:14:19 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/02 10:32:53 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ private:
 
 public:
 	Brain();
-	~Brain();
 	Brain(const Brain &other);
 	Brain &operator=(const Brain &other);
+	~Brain();
 };
 
 #endif
