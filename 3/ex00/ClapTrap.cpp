@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include <climits>
+#include <limits>
 
 ClapTrap::ClapTrap() : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	std::cout << "Default constructor called" << std::endl;
@@ -66,8 +66,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	}
 	_energyPoints--;
 	std::cout << "ClapTrap " << _name << " repairs itself for " << amount << " hit points!" << std::endl;
-	if (static_cast<unsigned int>(INT_MAX) - amount < static_cast<unsigned int>(_hitPoints)) {
-		_hitPoints = INT_MAX - 1;
+	if (static_cast<unsigned int>(std::numeric_limits<int>::max()) - amount < static_cast<unsigned int>(_hitPoints)) {
+		_hitPoints = std::numeric_limits<int>::max() - 1;
 		std::cout << "ClapTrap " << _name << " hit points maxed out!" << std::endl;
 	} else {
 		_hitPoints += amount;
