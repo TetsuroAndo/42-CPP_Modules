@@ -6,15 +6,15 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/05/31 11:51:52 by teando           ###   ########.fr        #
+#    Updated: 2025/06/02 20:50:07 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= a.out
 CXX		:= c++
-CXXFLAG	:= -Wall -Wextra -Werror -std=c++98
+CXXFLAG	:= -Wall -Wextra -Werror -std=c++98 -g
 RM		:= rm -rf
-SRC		:= main.cpp ClapTrap.cpp
+SRC		:= main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJDIR	:= obj
 OBJ		:= $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 
@@ -38,4 +38,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all run clean fclean re
