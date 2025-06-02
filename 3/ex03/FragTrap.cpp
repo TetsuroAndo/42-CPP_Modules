@@ -43,16 +43,16 @@ FragTrap::~FragTrap() {
 }
 
 void FragTrap::highFivesGuys(void) {
-    std::cout << "FragTrap " << this->_name << " requests a positive high five!" << std::endl;
+    std::cout << "FragTrap " << getName() << " requests a positive high five!" << std::endl;
 }
 
 void FragTrap::attack(const std::string &target) {
     if (this->_energyPoints <= 0 || this->_hitPoints <= 0) {
-        std::cout << "FragTrap " << this->_name << " can't attack because it has no energy or hit points left!" << std::endl;
+        std::cout << "FragTrap " << getName() << " can't attack because it has no energy or hit points left!" << std::endl;
         return;
     }
     this->_energyPoints--;
-    std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+    std::cout << "FragTrap " << getName() << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 

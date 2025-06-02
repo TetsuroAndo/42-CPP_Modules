@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 21:45:00 by teando            #+#    #+#             */
-/*   Updated: 2025/06/02 21:45:00 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/02 22:13:15 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ public:
     DiamondTrap(const DiamondTrap &other);
     DiamondTrap &operator=(const DiamondTrap &other);
     virtual ~DiamondTrap();
+
+	const std::string& getName() const;
 
     void attack(const std::string &target);
     void whoAmI();

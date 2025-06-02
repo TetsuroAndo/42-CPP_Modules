@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 21:45:00 by teando            #+#    #+#             */
-/*   Updated: 2025/06/02 21:45:00 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/02 22:12:17 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ DiamondTrap::~DiamondTrap() {
     std::cout << "[ DiamondTrap ] Destructor called" << std::endl;
 }
 
+const std::string& DiamondTrap::getName() const {
+    return _name;
+}
+
 // ScavTrapのattackメソッドを使用
 void DiamondTrap::attack(const std::string &target) {
     ScavTrap::attack(target);
@@ -53,5 +57,5 @@ void DiamondTrap::attack(const std::string &target) {
 
 // 自分の名前とClapTrapの名前を表示
 void DiamondTrap::whoAmI() {
-    std::cout << "I am DiamondTrap " << this->_name << ", also known as ClapTrap " << ClapTrap::_name << std::endl;
+    std::cout << "I am DiamondTrap " << getName() << ", also known as ClapTrap " << ClapTrap::getName() << std::endl;
 }

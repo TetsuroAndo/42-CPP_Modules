@@ -44,34 +44,34 @@ ScavTrap::~ScavTrap() {
 
 void ScavTrap::attack(const std::string &target) {
     if (_energyPoints <= 0 || _hitPoints <= 0) {
-        std::cout << "ScavTrap " << _name << " can't attack because it has no energy or hit points left!" << std::endl;
+        std::cout << "ScavTrap " << getName() << " can't attack because it has no energy or hit points left!" << std::endl;
         return;
     }
     _energyPoints--;
-    std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+    std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::takeDamage(unsigned int amount) {
-    std::cout << "ScavTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
+    std::cout << "ScavTrap " << getName() << " takes " << amount << " points of damage!" << std::endl;
     if (this->_hitPoints > static_cast<int>(amount)) {
         this->_hitPoints -= static_cast<int>(amount);
     } else {
         this->_hitPoints = 0;
     }
-    std::cout << "ScavTrap " << this->_name << " has " << this->_hitPoints << " hit points left." << std::endl;
+    std::cout << "ScavTrap " << getName() << " has " << this->_hitPoints << " hit points left." << std::endl;
 }
 
 void ScavTrap::beRepaired(unsigned int amount) {
     if (this->_energyPoints <= 0 || this->_hitPoints <= 0) {
-        std::cout << "ScavTrap " << this->_name << " can't repair itself because it has no energy or hit points left!" << std::endl;
+        std::cout << "ScavTrap " << getName() << " can't repair itself because it has no energy or hit points left!" << std::endl;
         return;
     }
     this->_energyPoints--;
-    std::cout << "ScavTrap " << this->_name << " repairs itself for " << amount << " hit points!" << std::endl;
+    std::cout << "ScavTrap " << getName() << " repairs itself for " << amount << " hit points!" << std::endl;
     this->_hitPoints += amount;
-    std::cout << "ScavTrap " << this->_name << " now has " << this->_hitPoints << " hit points." << std::endl;
+    std::cout << "ScavTrap " << getName() << " now has " << this->_hitPoints << " hit points." << std::endl;
 }
 
 void ScavTrap::guardGate() {
-    std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
+    std::cout << "ScavTrap " << getName() << " is now in Gate keeper mode" << std::endl;
 }

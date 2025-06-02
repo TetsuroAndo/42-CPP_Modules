@@ -40,6 +40,10 @@ ClapTrap::~ClapTrap() {
 	std::cout << "[ ClapTrap ] Destructor called" << std::endl;
 }
 
+const std::string& ClapTrap::getName() const {
+	return _name;
+}
+
 void ClapTrap::attack(const std::string &target) {
 	if (_energyPoints <= 0 || _hitPoints <= 0) {
 		std::cout << "ClapTrap " << _name << " can't attack because it has no energy or hit points left!" << std::endl;
