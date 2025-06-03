@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:20:05 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 15:37:03 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/03 13:32:27 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,8 @@ void testAnimalArray() {
 }
 
 int main() {
-	// Run the original test
 	testBasicPolymorphism();
-
-	// Test the wrong animal classes to demonstrate lack of polymorphism
 	testWrongPolymorphism();
-
-	// Test with an array of animals
 	testAnimalArray();
-
 	return 0;
 }
