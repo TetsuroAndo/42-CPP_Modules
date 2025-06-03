@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 11:51:57 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 14:45:16 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/03 13:05:26 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ public:
 	ClapTrap &operator=(const ClapTrap &other);
 	virtual ~ClapTrap();
 
-	const std::string& getName() const;
-
 	virtual void attack(const std::string &target);
 	virtual void takeDamage(unsigned int amount);
 	virtual void beRepaired(unsigned int amount);
+
+	const std::string &getName() const;
 };
 
 #endif // CLAPTRAP_HPP

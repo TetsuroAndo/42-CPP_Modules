@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 11:52:00 by teando            #+#    #+#             */
-/*   Updated: 2025/06/02 21:40:05 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/03 13:06:16 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 
 ClapTrap::~ClapTrap() {
 	std::cout << "[ ClapTrap ] Destructor called" << std::endl;
-}
-
-const std::string& ClapTrap::getName() const {
-	return _name;
 }
 
 void ClapTrap::attack(const std::string &target) {
@@ -77,4 +73,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		_hitPoints += amount;
 	}
 	std::cout << "ClapTrap " << _name << " now has " << _hitPoints << " hit points." << std::endl;
+}
+
+const std::string &ClapTrap::getName() const {
+	return _name;
 }
