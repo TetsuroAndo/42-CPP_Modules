@@ -9,22 +9,23 @@ find "$TARGET_DIR" -depth -type d | while read -r dir; do
   #   例) /path/to/.../node_modules や /path/to/.../.git など
   case "$dir" in
     *"/node_modules"*) continue ;;
+    # *"/.git"*) continue ;;
   esac
+  # パスのどこかに隠しディレクトリ（.で始まるディレクトリ）が含まれている場合はスキップ
+  if [[ "$dir" =~ /\.[^/]+/ ]]; then
+    continue
+  fi
   if [[ "$(basename "$dir")" =~ ^\..* ]]; then
     continue
   fi
 
-  # このディレクトリ直下にある “隠しファイル・node_modules以外” のファイル/ディレクトリ数をカウント
-  #
+  # このディレクトリ直下にあるファイル/ディレクトリ数をカウント
   # -mindepth 1 -maxdepth 1：直下のみ
   # \( -type f -o -type d \)：ファイルまたはディレクトリ
-  # -not -name '.*'：先頭が . のファイル/ディレクトリは除外
-  # -not -name 'node_modules'：node_modules ディレクトリは除外
+  # -not -name '.gitkeep'：.gitkeepは除外
   content_count=$(
     find "$dir" -mindepth 1 -maxdepth 1 \
-      \( -type f -o -type d \) \
-      -not -name '.*' \
-      -not -name 'node_modules' \
+      \( -type f -o -type d \) -not -name '.gitkeep' \
       2>/dev/null | wc -l
   )
 
