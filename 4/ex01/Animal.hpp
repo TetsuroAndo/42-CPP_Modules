@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:20:58 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 15:21:15 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/03 15:21:37 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class Animal {
 protected:
 	std::string type;
+
 public:
 	Animal();
 	Animal(std::string type);
