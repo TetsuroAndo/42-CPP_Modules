@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:28:33 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 15:28:33 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/04 23:56:31 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ WrongCat::~WrongCat() {
 }
 
 void WrongCat::makeSound() const {
-	std::cout << "[ WrongCat ] Meow" << std::endl;
+	std::cout << "WrongCat: Meow" << std::endl;
 }

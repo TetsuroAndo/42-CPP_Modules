@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:28:33 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 15:30:31 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/04 23:57:54 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	WrongAnimal(std::string type);
 	WrongAnimal(const WrongAnimal &other);
 	WrongAnimal &operator=(const WrongAnimal &other);
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 
 	std::string getType() const;
 	void makeSound() const;

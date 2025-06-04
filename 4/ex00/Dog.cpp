@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:21:31 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 15:26:11 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/04 23:56:41 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ Dog::~Dog() {
 }
 
 void Dog::makeSound() const {
-	std::cout << "[ Dog ] Woof" << std::endl;
+	std::cout << "Dog: Woof" << std::endl;
 }

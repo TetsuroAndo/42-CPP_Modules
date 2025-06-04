@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:21:38 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 15:24:11 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/04 23:56:45 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ Cat::~Cat() {
 }
 
 void Cat::makeSound() const {
-	std::cout << "[ Cat ] Meow" << std::endl;
+	std::cout << "Cat: Meow" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:28:33 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 15:28:33 by teando           ###   ########.fr       */
+/*   Updated: 2025/06/05 00:05:17 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ std::string WrongAnimal::getType() const {
 }
 
 void WrongAnimal::makeSound() const {
-	std::cout << "[ WrongAnimal ] Wrong animal sound" << std::endl;
+	std::cout << "WrongAnimal: Wrong animal sound" << std::endl;
 }
