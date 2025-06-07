@@ -11,7 +11,6 @@ YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# ヘルプ表示関数
 show_help() {
     echo -e "${BLUE}42header_tool${NC}"
     echo "42のソースコードファイルのヘッダーを削除または挿入します。"
@@ -19,12 +18,13 @@ show_help() {
     echo "usage: $0 [option] [directory]"
     echo ""
     echo "option:"
-    echo "  -r, --remove         ヘッダーを削除します"
+    echo "  -c, --check          ヘッダーの存在を確認します"
+    echo "  -d, --delete         ヘッダーを削除します"
     echo "  -a, --add            ヘッダーを追加します"
+	echo "  -r, --replace        ヘッダーを置き換えます"
     echo "  -h, --help           このヘルプを表示します"
     echo "  -u, --username USER  ユーザー名を指定します（デフォルト: 環境変数USERから取得）"
     echo "  -e, --email EMAIL    メールアドレスを指定します（デフォルト: username@student.42tokyo.jp）"
-    echo "  -c, --check          ヘッダーの存在を確認します"
     echo ""
     echo "optionが指定されていない場合は、ヘッダーの存在確認のみを行います。"
     echo ""
@@ -47,12 +47,20 @@ EMAIL=""
 # 引数解析
 while [[ $# -gt 0 ]]; do
     case $1 in
-        -r|--remove)
-            ACTION="remove"
+		-c|--check)
+            ACTION="check"
+            shift
+            ;;
+        -d|--delete)
+            ACTION="delete"
             shift
             ;;
         -a|--add)
             ACTION="add"
+            shift
+            ;;
+		-r|--replace)
+            ACTION="replace"
             shift
             ;;
         -h|--help)
@@ -66,10 +74,6 @@ while [[ $# -gt 0 ]]; do
         -e|--email)
             EMAIL="$2"
             shift 2
-            ;;
-		-c|--check)
-            ACTION="check"
-            shift
             ;;
         *)
             if [[ -d "$1" ]]; then
@@ -113,7 +117,7 @@ check_header() {
 }
 
 # ヘッダーを削除する関数
-remove_header() {
+delete_header() {
     local file="$1"
     local temp_file=$(mktemp)
     
@@ -122,7 +126,7 @@ remove_header() {
         # ヘッダー（13行）を削除
         tail -n +13 "$file" > "$temp_file"
         mv "$temp_file" "$file"
-        echo -e "${GREEN}header removed: $file${NC}"
+        echo -e "${GREEN}header deleted: $file${NC}"
         return 0
     else
         echo -e "${YELLOW}header not found: $file${NC}"
@@ -131,106 +135,71 @@ remove_header() {
     fi
 }
 
+# 1行を 80 文字に整形するヘルパ
+#   $1: 行頭固定部分   $2: 可変部分   $3: 行末固定部分
+padline() {
+    local head="$1" body="$2" tail="$3"
+    local fill=$(( 80 - ${#head} - ${#body} - ${#tail} ))
+    (( fill < 0 )) && fill=0       # はみ出したら 0 に潰す
+    printf '%s%s%*s%s\n' "$head" "$body" "$fill" '' "$tail"
+}
+
 # ヘッダーを追加する関数
 add_header() {
     local file="$1"
-    local filename=$(basename "$file")
-    local temp_file=$(mktemp)
-    local current_date=$(date "+%Y/%m/%d %H:%M:%S")
-    
-    # check_header関数を使用してヘッダーの存在を確認
-    if check_header "$file" > /dev/null; then
-        echo -e "${YELLOW}header already exists: $file${NC}"
-        rm "$temp_file"
-        return 1
-    fi
-    
-    # フィールドの固定幅を設定 - 42ヘッダーの標準仕様に基づく
-    local FILENAME_WIDTH=50  # ファイル名用の幅
-    local AUTHOR_WIDTH=40    # 著者情報用の幅
-    
-    # ファイル名のパディングを計算
-    local filename_len=${#filename}
-    local padding_filename=""
-    
-    # ファイル名が長すぎる場合は切り詰める
-    if [[ $filename_len -gt 40 ]]; then
-        filename="${filename:0:40}"
-        filename_len=40
-    fi
-    
-    # ファイル名のパディングを生成
-    # ファイル名の後に「:+:      :+:    :+:」が来るように調整
-    local padding_len=$((50 - filename_len))
-    for ((i=0; i<padding_len; i++)); do
-        padding_filename="$padding_filename "
-    done
-    
-    # ユーザー情報のパディングを計算
-    local user_email="$USERNAME <$EMAIL>"
-    local user_email_len=${#user_email}
-    local padding_user=""
-    
-    # ユーザー情報のパディングを生成
-    # ユーザー情報の後に「+#+  +:+       +#+」が来るように調整
-    local padding_user_len=$((40 - user_email_len))
-    if [[ $padding_user_len -lt 1 ]]; then
-        padding_user_len=1  # 最低で1つの空白を確保
-    fi
-    
-    for ((i=0; i<padding_user_len; i++)); do
-        padding_user="$padding_user "
-    done
-    
-    # Created/Updated行のパディングを計算
-    local created_padding=""
-    local updated_padding=""
-    
-    # Created行のパディングを生成
-    for ((i=0; i<12; i++)); do
-        created_padding="$created_padding "
-    done
-    
-    # Updated行のパディングを生成
-    for ((i=0; i<11; i++)); do
-        updated_padding="$updated_padding "
-    done
-    
-    # ヘッダーを作成
-    cat > "$temp_file" << EOF
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ${filename}${padding_filename}:+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ${USERNAME} <${EMAIL}>${padding_user}+#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: ${current_date}${created_padding}by ${USERNAME}           #+#    #+#             */
-/*   Updated: ${current_date}${updated_padding}by ${USERNAME}          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-EOF
+    local fname="$(basename "$file")"
+    local tmp="$(mktemp)"
+    local now="$(date '+%Y/%m/%d %H:%M:%S')"
 
-    # ファイルの内容をヘッダーの後に追加
-    cat "$file" >> "$temp_file"
-    mv "$temp_file" "$file"
+    # 既存チェック
+    if check_header "$file" >/dev/null; then
+        echo -e "${YELLOW}header already exists: $file${NC}"
+        rm "$tmp"; return 1
+    fi
+
+    # 各行生成 -------------------------------------------------------------
+    {
+    printf  '/* ************************************************************************** */\n'
+    printf  '/*                                                                            */\n'
+    printf  '/*                                                        :::      ::::::::   */\n'
+    padline '/*   '  "$fname"              ':+:      :+:    :+:   */'
+    printf  '/*                                                    +:+ +:+         +:+     */\n'
+    padline '/*   By: '  "${USERNAME} <${EMAIL}>"  '+#+  +:+       +#+        */'
+    printf  '/*                                                +#+#+#+#+#+   +#+           */\n'
+    padline '/*   Created: '  "$now by $USERNAME"  '#+#    #+#             */'
+    padline '/*   Updated: '  "$now by $USERNAME"  '###   ########.fr       */'
+    printf  '/*                                                                            */\n'
+    printf  '/* ************************************************************************** */\n\n'
+    } >"$tmp"
+
+    # 本文連結
+    cat "$file" >>"$tmp"
+    mv "$tmp" "$file"
     echo -e "${GREEN}header added: $file${NC}"
-    return 0
 }
 
-# ファイル名を適切にパディングする関数
-pad_filename() {
-    local filename="$1"
-    local max_length=42
-    local filename_length=${#filename}
-    
-    # ファイル名が長すぎる場合は切り詰める
-    if (( filename_length > max_length )); then
-        echo "${filename:0:max_length}"
-        return
+replace_header() {
+    local file="$1"
+
+    # ヘッダーがあるかチェック
+    if check_header "$file" >/dev/null; then
+        # 既存を削除してから再挿入
+        if delete_header "$file" 1>/dev/null && add_header "$file" 1>/dev/null; then
+            echo -e "${GREEN}header replaced: $file${NC}"
+            return 0
+        else
+            echo -e "${RED}header replace failed: $file${NC}"
+            return 1
+        fi
+    else
+        # 無ければ単純に追加
+        if add_header "$file"; then
+            return 0
+        else
+            echo -e "${RED}header add failed: $file${NC}"
+            return 1
+        fi
     fi
-    
-    echo "$filename"
 }
 
 # 対象ファイルを検索して処理
@@ -250,7 +219,7 @@ process_files() {
         files="$target"
     else
         # ディレクトリの場合、C/C++ソースファイルとヘッダーファイルを検索
-        files=$(find "$target" -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" \))
+        files=$(find "$target" -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" \) | sort)
     fi
     
     # 各ファイルを処理
@@ -258,9 +227,15 @@ process_files() {
         # ファイルが空でない場合のみ処理
         if [[ -n "$file" ]]; then
             count_total=$((count_total + 1))
-            
-            if [[ "$action" == "remove" ]]; then
-                if remove_header "$file"; then
+
+            if [[ "$action" == "check" ]]; then
+                if check_header "$file"; then
+                    count_with_header=$((count_with_header + 1))
+                else
+                    count_without_header=$((count_without_header + 1))
+                fi
+            elif [[ "$action" == "delete" ]]; then
+                if delete_header "$file"; then
                     count_success=$((count_success + 1))
                 else
                     count_skipped=$((count_skipped + 1))
@@ -271,13 +246,13 @@ process_files() {
                 else
                     count_skipped=$((count_skipped + 1))
                 fi
-            elif [[ "$action" == "check" ]]; then
-                if check_header "$file"; then
-                    count_with_header=$((count_with_header + 1))
+			elif [[ "$action" == "replace" ]]; then
+                if replace_header "$file"; then
+                    count_success=$((count_success + 1))
                 else
-                    count_without_header=$((count_without_header + 1))
+                    count_skipped=$((count_skipped + 1))
                 fi
-            fi
+            fi	
         fi
     done <<< "$files"
     
