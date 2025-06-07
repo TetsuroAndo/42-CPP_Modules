@@ -12,7 +12,6 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 show_help() {
-    echo -e "${BLUE}42header_tool${NC}"
     echo "42のソースコードファイルのヘッダーを削除または挿入します。"
     echo ""
     echo "usage: $0 [option] [directory]"
@@ -25,14 +24,6 @@ show_help() {
     echo "  -h, --help           このヘルプを表示します"
     echo "  -u, --username USER  ユーザー名を指定します（デフォルト: 環境変数USERから取得）"
     echo "  -e, --email EMAIL    メールアドレスを指定します（デフォルト: username@student.42tokyo.jp）"
-    echo ""
-    echo "optionが指定されていない場合は、ヘッダーの存在確認のみを行います。"
-    echo ""
-    echo "example:"
-    echo "  $0 -a .              カレントディレクトリ内のすべてのファイルにヘッダーを追加"
-    echo "  $0 -r ./src          ./srcディレクトリ内のすべてのファイルからヘッダーを削除"
-    echo "  $0 -a -u johndoe .   指定したユーザー名でヘッダーを追加"
-    echo "  $0 ./src            ./srcディレクトリ内のファイルのヘッダー存在を確認"
     echo ""
 }
 
