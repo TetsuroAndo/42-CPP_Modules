@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 10:18:32 by teando            #+#    #+#             */
-/*   Updated: 2025/08/14 11:34:28 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/14 12:27:42 by teando           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -21,9 +21,10 @@ public:
 	FragTrap(const std::string &name);
 	FragTrap(const FragTrap &other);
 	FragTrap &operator=(const FragTrap &other);
-	~FragTrap();
+	virtual ~FragTrap();
 
 	void highFivesGuys(void);
+	virtual void attack(const std::string &target);
 };
 
 #endif // FRAGTRAP_HPP

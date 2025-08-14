@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 11:51:57 by teando            #+#    #+#             */
-/*   Updated: 2025/08/14 12:27:38 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/14 14:57:31 by teando           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -32,6 +32,10 @@ public:
 	virtual void attack(const std::string &target);
 	void beRepaired(unsigned int amount);
 	void takeDamage(unsigned int amount);
+
+	unsigned int getHitPoints() const;
+	unsigned int getEnergyPoints() const;
+	unsigned int getAttackDamage() const;
 };
 
 #endif // CLAPTRAP_HPP

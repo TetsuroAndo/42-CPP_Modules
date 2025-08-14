@@ -1,37 +1,34 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 11:51:57 by teando            #+#    #+#             */
-/*   Updated: 2025/08/14 12:27:38 by teando           ###   ########.fr       */
+/*   Created: 2025/08/14 12:37:50 by teando            #+#    #+#             */
+/*   Updated: 2025/08/14 13:20:45 by teando           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
 #include <iostream>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ClapTrap {
-protected:
+class DiamondTrap : virtual public ScavTrap, virtual public FragTrap {
+private:
 	std::string _name;
-	unsigned int _hitPoints;
-	unsigned int _energyPoints;
-	unsigned int _attackDamage;
-
 public:
-	ClapTrap();
-	ClapTrap(const std::string &name);
-	ClapTrap(const ClapTrap &other);
-	ClapTrap &operator=(const ClapTrap &other);
-	virtual ~ClapTrap();
+	DiamondTrap();
+	DiamondTrap(const std::string &name);
+	DiamondTrap(const DiamondTrap &other);
+	DiamondTrap &operator=(const DiamondTrap &other);
+	~DiamondTrap();
 
-	virtual void attack(const std::string &target);
-	void beRepaired(unsigned int amount);
-	void takeDamage(unsigned int amount);
+	void whoAmI();
+	void attack(const std::string &target);
 };
 
-#endif // CLAPTRAP_HPP
+#endif // DIAMONDTRAP_HPP

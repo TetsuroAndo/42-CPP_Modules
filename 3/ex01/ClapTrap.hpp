@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 11:51:57 by teando            #+#    #+#             */
-/*   Updated: 2025/08/14 09:56:22 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/14 12:28:50 by teando           ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
@@ -27,9 +27,9 @@ public:
 	ClapTrap(const std::string &name);
 	ClapTrap(const ClapTrap &other);
 	ClapTrap &operator=(const ClapTrap &other);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
-	void attack(const std::string& target);
+	virtual void attack(const std::string &target);
 	void beRepaired(unsigned int amount);
 	void takeDamage(unsigned int amount);
 };
