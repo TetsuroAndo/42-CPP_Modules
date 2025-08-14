@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 12:37:50 by teando            #+#    #+#             */
-/*   Updated: 2025/08/14 13:20:45 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/14 16:44:08 by teando           ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
 #define DIAMONDTRAP_HPP
@@ -17,7 +17,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap : virtual public ScavTrap, virtual public FragTrap {
+class DiamondTrap : public ScavTrap, public FragTrap {
 private:
 	std::string _name;
 public:
