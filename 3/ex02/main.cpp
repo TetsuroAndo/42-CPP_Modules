@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 11:51:55 by teando            #+#    #+#             */
-/*   Updated: 2025/08/14 10:23:50 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/14 09:57:52 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ int main(void) {
 
 	ScavTrap scavtrap("ST-002");
 	scavtrap.attack("Target");
-	scavtrap.takeDamage(120);
+	scavtrap.takeDamage(5);
 	scavtrap.beRepaired(3);
-	scavtrap.guardGate();
 	scavtrap.guardGate();
 
 	return 0;
