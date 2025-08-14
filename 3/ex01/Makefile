@@ -6,7 +6,7 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/06/02 20:50:30 by teando           ###   ########.fr        #
+#    Updated: 2025/08/14 09:59:37 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	:= a.out
 CXX		:= c++
 CXXFLAG	:= -Wall -Wextra -Werror -std=c++98
 RM		:= rm -rf
-SRC		:= main.cpp ClapTrap.cpp
+SRC		:= main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJDIR	:= obj
 OBJ		:= $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 

@@ -6,19 +6,19 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 11:52:00 by teando            #+#    #+#             */
-/*   Updated: 2025/08/13 19:40:36 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/14 09:55:59 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <limits>
 
-ClapTrap::ClapTrap() : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap() : _name("default"), _hitPoints(100), _energyPoints(50), _attackDamage(20) {
 	std::cerr << "[ ClapTrap ] Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-	std::cerr << "[ ClapTrap ] Name constructor called" << std::endl;
+ClapTrap::ClapTrap(const std::string &name) : _name(name),  _hitPoints(100), _energyPoints(50), _attackDamage(20) {
+	std::cerr << "[ ClapTrap ] Name " << name << " constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) : _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage) {
