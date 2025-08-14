@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 11:52:00 by teando            #+#    #+#             */
-/*   Updated: 2025/08/14 14:58:13 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/14 20:21:02 by teando           ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <limits>
@@ -73,16 +73,4 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		_hitPoints = 0;
 	}
 	std::cout << "ClapTrap " << _name << " has " << _hitPoints << " hit points left." << std::endl;
-}
-
-unsigned int ClapTrap::getHitPoints() const {
-	return _hitPoints;
-}
-
-unsigned int ClapTrap::getEnergyPoints() const {
-	return _energyPoints;
-}
-
-unsigned int ClapTrap::getAttackDamage() const {
-	return _attackDamage;
 }
