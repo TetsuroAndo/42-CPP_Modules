@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 19:39:25 by teando            #+#    #+#             */
-/*   Updated: 2025/08/14 10:21:43 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/14 11:34:11 by teando           ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "ScavTrap.hpp"
 
@@ -30,10 +30,6 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other), _guardMode(other._g
 	std::cerr << "[ ScavTrap ] Copy Constructor called" << std::endl;
 }
 
-ScavTrap::~ScavTrap() {
-	std::cerr << "[ ScavTrap ] Destructor called" << std::endl;
-}
-
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
 	std::cerr << "[ ScavTrap ] Copy assignment operator called" << std::endl;
 	if (this != &other) {
@@ -41,6 +37,10 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
 		_guardMode = other._guardMode;
 	}
 	return *this;
+}
+
+ScavTrap::~ScavTrap() {
+	std::cerr << "[ ScavTrap ] Destructor called" << std::endl;
 }
 
 void ScavTrap::guardGate() {
