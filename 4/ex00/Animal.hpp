@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 15:20:58 by teando            #+#    #+#             */
-/*   Updated: 2025/05/31 15:21:15 by teando           ###   ########.fr       */
+/*   Created: 2025/08/15 11:05:37 by teando            #+#    #+#             */
+/*   Updated: 2025/08/15 11:39:37 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 #define ANIMAL_HPP
 
 #include <iostream>
-#include <string>
 
 class Animal {
 protected:
-	std::string type;
+	std::string _type;
 public:
-	Animal();
 	Animal(std::string type);
 	Animal(const Animal &other);
 	Animal &operator=(const Animal &other);
 	virtual ~Animal();
 
-	std::string getType() const;
 	virtual void makeSound() const;
+	virtual std::string getType() const;
 };
 
 #endif // ANIMAL_HPP
