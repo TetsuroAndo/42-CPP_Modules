@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:25 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 17:47:51 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 17:47:02 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int main() {
 	Animal* animals[numAnimals];
 	animals[0] = new Cat();
 	animals[1] = new Dog();
-	animals[2] = new Animal();
+	//animals[2] = new Animal();
+	animals[2] = new Cat(); // Changed to Cat for demonstration
 
 	for (int i = 0; i < numAnimals; ++i) {
 		std::cout << "Animal type: " << animals[i]->getType() << "\n";

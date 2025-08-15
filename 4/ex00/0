@@ -1,0 +1,32 @@
+[    Animal     ] Default constructor called
+[    Animal     ] Type Constructor called
+[      Dog      ] Constructor called[    Animal     ] Default constructor called
+[    Animal     ] Type Constructor called
+[      Dog      ] Constructor called
+[    Animal     ] Type Constructor called
+[      Cat      ] Constructor called
+[    Animal
+[    Animal     ] Type Constructor called
+[      Cat      ] Constructor called
+[    Animal     ]      ] makeSound called: [makeSound called: [    Animal    Animal     ]      ] Destructor called
+Destructor called
+[   [      Dog     Dog      ]     ] makeSound called: [makeSound called: [            Dog    Dog      ] Destructor called
+  ] Destructor called
+[    [    Animal    Animal     ] Destructor called
+ ] Destructor called
+[  [      Cat    Cat            ] makeSound called: [] makeSound called: [           Cat    Cat      ] Destructor called
+   ] Destructor called
+[    [    Animal    Animal     ] Destructor called
+ ] Destructor called
+[[  WrongAnimal    WrongAnimal  ] Default constructor called
+[ ] Default constructor called
+[  WrongAnimal  ]  WrongAnimal  ] Type constructor called
+[  Type constructor called
+[   WrongCat    WrongCat    ] Default constructor called
+ ] Default constructor called
+[  WrongAnimal[  WrongAnimal  ] makeSound called:   ] makeSound called: [  WrongAnimal[  WrongAnimal  ] Destructor called
+  ] Destructor called
+[  [  WrongAnimal  ] makeSound called: WrongAnimal  ] makeSound called: [ [   WrongCat     WrongCat    ] Destructor called
+ ] Destructor called
+[  WrongAnimal [  WrongAnimal  ] Destructor called
+ ] Destructor called

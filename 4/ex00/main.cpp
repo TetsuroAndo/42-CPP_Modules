@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:25 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 17:39:04 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 17:44:21 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,12 @@
 int main() {
 
 	std::cout << "\n--- Create Dog and Cat Array ---\n" << std::endl;
-	const int numAnimals = 2;
+	const int numAnimals = 3;
 	Animal* animals[numAnimals];
-
-	for (int i = 0; i < numAnimals; ++i) {
-		if (i < numAnimals / 2) {
-			animals[i] = new Dog();
-		} else {
-			animals[i] = new Cat();
-		}
-	}
-
+	animals[0] = new Cat();
+	animals[1] = new Dog();
+	animals[2] = new Animal();
+	
 	for (int i = 0; i < numAnimals; ++i) {
 		std::cout << "Animal type: " << animals[i]->getType() << "\n";
 		animals[i]->makeSound();
