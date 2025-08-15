@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:28 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 15:05:44 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 16:51:48 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
+private:
+	Brain *_brain;
 public:
 	Dog();
 	Dog(const Dog &other);
