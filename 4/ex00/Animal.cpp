@@ -6,38 +6,47 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:39 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 11:39:35 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 15:43:00 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(std::string type) : _type(type) {
-	std::cerr << "[ Animal ] Constructor called" << std::endl;
+Animal::Animal() : _type("Animal") {
+	putLogLevel("Animal", LOG_LV_WIDTH);
+	std::cerr << "Default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &other) : type(other.type) {
-	std::cerr << "[ Animal ] Copy constructor called" << std::endl;
+Animal::Animal(std::string type) : _type(type) {
+	putLogLevel("Animal", LOG_LV_WIDTH);
+	std::cerr << "Type Constructor called" << std::endl;
+}
+
+Animal::Animal(const Animal &other) : _type(other._type) {
+	putLogLevel("Animal", LOG_LV_WIDTH);
+	std::cerr << "Copy constructor called" << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &other) {
-	std::cerr << "[ Animal ] Copy assignment operator called" << std::endl;
+	putLogLevel("Animal", LOG_LV_WIDTH);
+	std::cerr << "Copy assignment operator called" << std::endl;
 	if (this != &other) {
-		type = other.type;
+		_type = other._type;
 	}
 	return *this;
 }
 
 Animal::~Animal() {
-	std::cerr << "[ Animal ] Destructor called" << std::endl;
+	putLogLevel("Animal", LOG_LV_WIDTH);
+	std::cerr << "Destructor called" << std::endl;
 }
 
 void Animal::makeSound() const {
-	std::cerr << "[ Animal ] makeSound called: ";
-	std::cout << "Animal sound!" << std::endl;
+	putLogLevel("Animal", LOG_LV_WIDTH);
+	std::cerr << "makeSound called: ";
+	std::cout << "This is Animal! NO SOUND!" << std::endl;
 }
 
 std::string Animal::getType() const {
-	std::cerr << "[ Animal ] getType called: " << type << std::endl;
-	return type;
+	return _type;
 }

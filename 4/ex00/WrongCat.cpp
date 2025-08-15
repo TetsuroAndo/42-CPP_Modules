@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/15 11:05:30 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 15:43:50 by teando           ###   ########.fr       */
+/*   Created: 2025/08/15 15:04:24 by teando            #+#    #+#             */
+/*   Updated: 2025/08/15 15:44:46 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog() : Animal("Dog") {
-	putLogLevel("Dog", LOG_LV_WIDTH);
+WrongCat::WrongCat() : WrongAnimal("WrongCat") {
+	putLogLevel("WrongCat", LOG_LV_WIDTH);
 	std::cerr << "Constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other) {
-	putLogLevel("Dog", LOG_LV_WIDTH);
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other) {
+	putLogLevel("WrongCat", LOG_LV_WIDTH);
 	std::cerr << "Copy constructor called" << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &other) {
-	putLogLevel("Dog", LOG_LV_WIDTH);
+WrongCat &WrongCat::operator=(const WrongCat &other) {
+	putLogLevel("WrongCat", LOG_LV_WIDTH);
 	std::cerr << "Copy assignment operator called" << std::endl;
 	if (this != &other) {
-		Animal::operator=(other);
+		WrongAnimal::operator=(other);
 	}
 	return *this;
 }
 
-Dog::~Dog() {
-	putLogLevel("Dog", LOG_LV_WIDTH);
+WrongCat::~WrongCat() {
+	putLogLevel("WrongCat", LOG_LV_WIDTH);
 	std::cerr << "Destructor called" << std::endl;
 }
 
-void Dog::makeSound() const {
-	putLogLevel("Dog", LOG_LV_WIDTH);
+void WrongCat::makeSound() const {
+	putLogLevel("WrongCat", LOG_LV_WIDTH);
 	std::cerr << "makeSound called: ";
-	std::cout << "Woooooof!" << std::endl;
+	std::cout << "!Wrong Meow! Wrong!" << std::endl;
 }

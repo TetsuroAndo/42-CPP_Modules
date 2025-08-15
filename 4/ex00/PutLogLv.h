@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   PutLogLv.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/15 11:05:37 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 15:42:34 by teando           ###   ########.fr       */
+/*   Created: 2025/08/15 15:36:36 by teando            #+#    #+#             */
+/*   Updated: 2025/08/15 15:42:38 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef PUTLOGLV_HPP
+#define PUTLOGLV_HPP
 
 #include <iostream>
-#include "PutLogLv.h"
+#include <iomanip>
+#include <string>
 
-class Animal {
-protected:
-	std::string _type;
-public:
-	Animal();
-	Animal(std::string type);
-	Animal(const Animal &other);
-	Animal &operator=(const Animal &other);
-	virtual ~Animal();
+#define LOG_LV_WIDTH 15
 
-	virtual void makeSound() const;
-	virtual std::string getType() const;
-};
+void putLogLevel(const std::string& text, int width);
 
-#endif // ANIMAL_HPP
+#endif // PUTLOGLV_HPP
