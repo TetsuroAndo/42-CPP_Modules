@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 16:21:48 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 16:46:13 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 16:56:38 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ Brain::~Brain() {
 }
 
 const std::string &Brain::getIdeas(const int idx) const {
+	static const std::string emptyString = "";
 	if (idx < 0 || idx >= 100) {
 		putLogLevel("Brain", LOG_LV_WIDTH);
 		std::cerr << "Index out of Bounds" << std::endl;
-		return;
+		return emptyString;
 	}
 	return ideas[idx];
 }
@@ -37,6 +38,6 @@ void Brain::setIdea(const int idx, std::string idea) {
 		std::cerr << "Index out of Bounds" << std::endl;
 		return;
 	}
-	ideas[idx] = std::move(idea);
+	ideas[idx] = idea;
 	std::cerr << "Idea set at index " << idx << ": " << ideas[idx] << std::endl;
 }
