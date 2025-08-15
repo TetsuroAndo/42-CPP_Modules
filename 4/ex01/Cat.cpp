@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:35 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 17:13:43 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 17:34:24 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Cat &Cat::operator=(const Cat &other) {
 	if (this != &other) {
 		Animal::operator=(other);
 		delete _brain;
-		_brain = new Brain();
+		_brain = new Brain(*other._brain);
 	}
 	return *this;
 }
@@ -45,4 +45,8 @@ void Cat::makeSound() const {
 	putLogLevel("Cat", LOG_LV_WIDTH);
 	std::cerr << "makeSound called: ";
 	std::cout << "Meow!" << std::endl;
+}
+
+Brain *Cat::getBrain() const {
+	return _brain;
 }

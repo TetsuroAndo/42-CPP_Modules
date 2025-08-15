@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:30 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 17:13:14 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 17:31:00 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Dog &Dog::operator=(const Dog &other) {
 	if (this != &other) {
 		Animal::operator=(other);
 		delete _brain;
-		_brain = new Brain();
+		_brain = new Brain(*other._brain);
 	}
 	return *this;
 }
