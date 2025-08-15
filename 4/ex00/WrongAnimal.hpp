@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 14:55:21 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 15:44:30 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 16:10:03 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ public:
 	WrongAnimal &operator=(const WrongAnimal &other);
 	virtual ~WrongAnimal();
 
-	virtual void makeSound() const;
-	virtual std::string getType() const;
+	void makeSound() const;
+	std::string getType() const;
 };
 
 #endif // WRONGANIMAL_HPP

@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 15:04:24 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 15:44:46 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 16:02:37 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat") {
 	putLogLevel("WrongCat", LOG_LV_WIDTH);
-	std::cerr << "Constructor called" << std::endl;
+	std::cerr << "Default constructor called" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other) {
@@ -39,5 +39,5 @@ WrongCat::~WrongCat() {
 void WrongCat::makeSound() const {
 	putLogLevel("WrongCat", LOG_LV_WIDTH);
 	std::cerr << "makeSound called: ";
-	std::cout << "!Wrong Meow! Wrong!" << std::endl;
+	std::cout << "Wrong Meow!" << std::endl;
 }

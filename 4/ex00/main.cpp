@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:25 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 15:22:19 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 16:12:55 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "WrongCat.hpp"
 
 int main() {
+
+	std::cout << "\n--- Animal ---\n" << std::endl;
 
 	Animal *animals[3];
 
@@ -27,7 +29,9 @@ int main() {
 		animals[i]->makeSound();
 		delete animals[i];
 	}
-	
+
+	std::cout << "\n--- Wrong Animal ---\n" << std::endl;
+
 	WrongAnimal *wrongAnimals[2];
 
 	wrongAnimals[0] = new WrongAnimal();
