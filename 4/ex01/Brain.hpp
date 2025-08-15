@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 16:21:40 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 16:45:58 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 17:14:19 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ private:
 	std::string ideas[100];
 public:
 	Brain();
+	Brain(const Brain &other);
+	Brain &operator=(const Brain &other);
 	~Brain();
 
-	const std::string &getIdeas(const int idx) const;
+	const std::string &getIdea(const int idx) const;
 	void setIdea(const int idx, std::string idea);
 };
 

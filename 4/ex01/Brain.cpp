@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 16:21:48 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 16:56:38 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 17:14:25 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,31 @@ Brain::Brain() : ideas() {
 	std::cerr << "Constructor called" << std::endl;
 }
 
+Brain::Brain(const Brain &other) {
+	putLogLevel("Brain", LOG_LV_WIDTH);
+	std::cerr << "Copy constructor called" << std::endl;
+	for (int i = 0; i < 100; ++i) {
+		ideas[i] = other.ideas[i];
+	}
+}
+
+Brain &Brain::operator=(const Brain &other) {
+	putLogLevel("Brain", LOG_LV_WIDTH);
+	std::cerr << "Copy assignment operator called" << std::endl;
+	if(this != &other) {
+		for (int i = 0; i < 100; ++i) {
+			ideas[i] = other.ideas[i];
+		}
+	}
+	return *this;
+}
+
 Brain::~Brain() {
 	putLogLevel("Brain", LOG_LV_WIDTH);
 	std::cerr << "Destructor called" << std::endl;
 }
 
-const std::string &Brain::getIdeas(const int idx) const {
+const std::string &Brain::getIdea(const int idx) const {
 	static const std::string emptyString = "";
 	if (idx < 0 || idx >= 100) {
 		putLogLevel("Brain", LOG_LV_WIDTH);

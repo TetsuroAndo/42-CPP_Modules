@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:28 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 16:51:48 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 17:12:26 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	virtual ~Dog();
 
 	virtual void makeSound() const;
+	Brain *getBrain() const;
 };
 
 #endif // DOG_HPP

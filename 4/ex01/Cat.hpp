@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:33 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 16:45:26 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 17:13:24 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	virtual ~Cat();
 
 	virtual void makeSound() const;
+	Brain *getBrain() const;
 };
 
 #endif // CAT_HPP

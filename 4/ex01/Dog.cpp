@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:30 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 16:52:26 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/15 17:13:14 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::Dog() : Animal("Dog") {
 Dog::Dog(const Dog &other) : Animal(other) {
 	putLogLevel("Dog", LOG_LV_WIDTH);
 	std::cerr << "Copy constructor called" << std::endl;
-	_brain = new Brain();
+	_brain = new Brain(*other._brain);
 }
 
 Dog &Dog::operator=(const Dog &other) {
@@ -29,6 +29,7 @@ Dog &Dog::operator=(const Dog &other) {
 	std::cerr << "Copy assignment operator called" << std::endl;
 	if (this != &other) {
 		Animal::operator=(other);
+		delete _brain;
 		_brain = new Brain();
 	}
 	return *this;
@@ -44,4 +45,8 @@ void Dog::makeSound() const {
 	putLogLevel("Dog", LOG_LV_WIDTH);
 	std::cerr << "makeSound called: ";
 	std::cout << "Woooooof!" << std::endl;
+}
+
+Brain *Dog::getBrain() const {
+	return _brain;
 }
