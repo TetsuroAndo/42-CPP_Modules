@@ -1,19 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/22 17:13:55 by teando            #+#    #+#             */
-/*   Updated: 2025/08/22 17:23:34 by teando           ###   ########.fr       */
+/*   Created: 2025/08/22 17:26:40 by teando            #+#    #+#             */
+/*   Updated: 2025/08/22 17:26:49 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include "IMateriaSource.hpp"
-
-class MateriaSource : public IMateriaSource {
-	
-}
+#include "Character.hpp"

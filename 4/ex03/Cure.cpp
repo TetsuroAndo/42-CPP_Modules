@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 14:30:34 by teando            #+#    #+#             */
-/*   Updated: 2025/08/21 14:32:06 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/22 17:13:19 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,10 @@ Cure::~Cure() {
 	std::cerr << "[ Cure ] destructor called" << std::endl;
 }
 
+AMateria* Cure::clone() const {
+	return new Cure(*this);
+}
+
+void Cure::use(ICharacter& target) {
+
+}

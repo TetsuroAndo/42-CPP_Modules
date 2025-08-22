@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:14:56 by teando            #+#    #+#             */
-/*   Updated: 2025/08/21 14:33:09 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/22 17:12:55 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,12 @@ Ice &Ice::operator=(const Ice &other) {
 
 Ice::~Ice() {
 	std::cerr << "[ Ice  ] destructor called" << std::endl;
+}
+
+AMateria* Ice::clone() const {
+	return new Ice(*this);
+}
+
+void Ice::use(ICharacter& target) {
+
 }
