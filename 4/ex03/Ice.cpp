@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:14:56 by teando            #+#    #+#             */
-/*   Updated: 2025/08/22 17:12:55 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 04:25:56 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ AMateria* Ice::clone() const {
 }
 
 void Ice::use(ICharacter& target) {
-
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

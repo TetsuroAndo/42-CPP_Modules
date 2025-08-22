@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 19:39:09 by teando            #+#    #+#             */
-/*   Updated: 2025/08/21 13:52:05 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 05:51:38 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 class AMateria {
 protected:
 	std::string _type;
+
 public:
 	AMateria();
 	AMateria(std::string const & type);

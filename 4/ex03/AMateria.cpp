@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 19:39:03 by teando            #+#    #+#             */
-/*   Updated: 2025/08/22 16:52:41 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 05:36:37 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,4 @@ std::string const & AMateria::getType() const {
 	return _type;
 }
 
-void AMateria::use(ICharacter& target) {
-	std::cerr << "[ AMateria ] use called on " << _type << " with target: " << target.getName() << std::endl;
-}
+void AMateria::use(ICharacter& target) {}

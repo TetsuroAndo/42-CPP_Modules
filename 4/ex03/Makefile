@@ -6,7 +6,7 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/08/15 19:37:39 by teando           ###   ########.fr        #
+#    Updated: 2025/08/23 04:24:21 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	:= a.out
 CXX		:= c++
 CXXFLAG	:= -Wall -Wextra -Werror -std=c++98
 RM		:= rm -rf
-SRC		:= main.cpp
+SRC		:= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSoucre.cpp
 OBJDIR	:= obj
 OBJ		:= $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 
