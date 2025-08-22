@@ -6,33 +6,38 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 17:26:40 by teando            #+#    #+#             */
-/*   Updated: 2025/08/23 05:54:17 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 06:07:08 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "PutLogLv.h"
 
 Character::Character() : _name("undefined") {
-	std::cerr << "[ Character ] Default constructor called" << std::endl;
+	putLogLevel("Character", LOG_LV_WIDTH);
+	std::cerr << "Default constructor called" << std::endl;
 	for (int i = 0; i < _inventorySize; i++) {
 		_inventory[i] = NULL;
 	}
 }
 
 Character::Character(std::string const & name) : _name(name) {
-	std::cerr << "[ Character ] Name: " << name << " constructor called" << std::endl;
+	putLogLevel("Character", LOG_LV_WIDTH);
+	std::cerr << "Name: " << name << " constructor called" << std::endl;
 	for (int i = 0; i < _inventorySize; i++) {
 		_inventory[i] = NULL;
 	}
 }
 
 Character::Character(const Character &other) : _name(other._name) {
-	std::cerr << "[ Character ] Copy constructor called" << std::endl;
+	putLogLevel("Character", LOG_LV_WIDTH);
+	std::cerr << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 Character &Character::operator=(const Character &other) {
-	std::cerr << "[ Character ] Copy assignment operator called" << std::endl;
+	putLogLevel("Character", LOG_LV_WIDTH);
+	std::cerr << "Copy assignment operator called" << std::endl;
 	if(this != &other) {
 		for (int i = 0; i < _inventorySize; i++) {
 			if (_inventory[i])
@@ -47,7 +52,8 @@ Character &Character::operator=(const Character &other) {
 }
 
 Character::~Character() {
-	std::cerr << "[ Character ] Destructor called" << std::endl;
+	putLogLevel("Character", LOG_LV_WIDTH);
+	std::cerr << "Destructor called" << std::endl;
 	for (int i = 0; i < _inventorySize; i++) {
 		if (_inventory[i])
 			delete _inventory[i];

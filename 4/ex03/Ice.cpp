@@ -6,30 +6,35 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:14:56 by teando            #+#    #+#             */
-/*   Updated: 2025/08/23 04:25:56 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 06:07:42 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "PutLogLv.h"
 
 Ice::Ice() : AMateria("ice") {
-	std::cerr << "[ Ice  ] constructor called" << std::endl;
+	putLogLevel("Ice", LOG_LV_WIDTH);
+	std::cerr << "constructor called" << std::endl;
 }
 
 Ice::Ice(const Ice &other) : AMateria(other._type) {
-	std::cerr << "[ Ice  ] copy constructor called" << std::endl;
+	putLogLevel("Ice", LOG_LV_WIDTH);
+	std::cerr << "copy constructor called" << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &other) {
 	if (this != &other) {
-		std::cerr << "[ Ice  ] assignment operator called" << std::endl;
+		putLogLevel("Ice", LOG_LV_WIDTH);
+	std::cerr << "assignment operator called" << std::endl;
 		AMateria::operator=(other);
 	}
 	return *this;
 }
 
 Ice::~Ice() {
-	std::cerr << "[ Ice  ] destructor called" << std::endl;
+	putLogLevel("Ice", LOG_LV_WIDTH);
+	std::cerr << "destructor called" << std::endl;
 }
 
 AMateria* Ice::clone() const {

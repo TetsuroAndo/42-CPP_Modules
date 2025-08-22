@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   PutLogLv.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/15 20:48:47 by teando            #+#    #+#             */
-/*   Updated: 2025/08/23 06:02:15 by teando           ###   ########.fr       */
+/*   Created: 2025/08/15 15:36:36 by teando            #+#    #+#             */
+/*   Updated: 2025/08/15 15:42:38 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-#define ICHARACTER_HPP
+#ifndef PUTLOGLV_HPP
+#define PUTLOGLV_HPP
 
+#include <iostream>
+#include <iomanip>
 #include <string>
 
-class AMateria;
+#define LOG_LV_WIDTH 15
 
-class ICharacter {
-public:
-	virtual ~ICharacter() {}
-	virtual std::string const & getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
-};
+void putLogLevel(const std::string& text, int width);
 
-#endif // ICHARACTER_HPP
+#endif // PUTLOGLV_HPP

@@ -6,30 +6,35 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 14:30:34 by teando            #+#    #+#             */
-/*   Updated: 2025/08/23 04:25:30 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 06:07:23 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "PutLogLv.h"
 
 Cure::Cure() : AMateria("cure") {
-	std::cerr << "[ Cure ] default constructor called" << std::endl;
+	putLogLevel("Cure", LOG_LV_WIDTH);
+	std::cerr << "default constructor called" << std::endl;
 }
 
 Cure::Cure(const Cure &other) : AMateria(other) {
-	std::cerr << "[ Cure ] copy constructor called" << std::endl;
+	putLogLevel("Cure", LOG_LV_WIDTH);
+	std::cerr << "copy constructor called" << std::endl;
 }
 
 Cure &Cure::operator=(const Cure &other) {
 	if (this != &other) {
-		std::cerr << "[ Cure ] assignment operator called" << std::endl;
+		putLogLevel("Cure", LOG_LV_WIDTH);
+	std::cerr << "assignment operator called" << std::endl;
 		AMateria::operator=(other);
 	}
 	return *this;
 }
 
 Cure::~Cure() {
-	std::cerr << "[ Cure ] destructor called" << std::endl;
+	putLogLevel("Cure", LOG_LV_WIDTH);
+	std::cerr << "destructor called" << std::endl;
 }
 
 AMateria* Cure::clone() const {
