@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 13:28:20 by teando            #+#    #+#             */
-/*   Updated: 2025/08/23 06:16:49 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 06:34:32 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int main() {
 		// Characterクラスはインベントリのポインタを返さないので、
 		// unequipのテストは「そのスロットが空になり、再度equipできるか」で確認する
 		cloud->unequip(1);
+		
 
 		std::cout << "\n--> Using slot 1 after unequipping (should do nothing)..." << std::endl;
 		cloud->use(1, *target);

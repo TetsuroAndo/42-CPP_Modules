@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 14:30:34 by teando            #+#    #+#             */
-/*   Updated: 2025/08/23 06:07:23 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 06:29:39 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ AMateria* Cure::clone() const {
 }
 
 void Cure::use(ICharacter& target) {
-	std::cout << "* shoots an cure bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

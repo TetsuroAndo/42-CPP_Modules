@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 05:43:12 by teando            #+#    #+#             */
-/*   Updated: 2025/08/23 06:08:04 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 06:33:05 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ MateriaSource::MateriaSource(const MateriaSource &other) {
 	for (int i = 0; i < _learnedNum; i++) {
 		if (other._learned[i])
 			_learned[i] = other._learned[i]->clone();
+		else _learned[i] = NULL;
 	}
 }
 
@@ -47,8 +48,9 @@ MateriaSource::~MateriaSource() {
 	putLogLevel("MateriaSource", LOG_LV_WIDTH);
 	std::cerr << "Destructor called" << std::endl;
 	for (int i = 0; i < _learnedNum; i++) {
-		if (_learned[i])
+		if (_learned[i]) {
 			delete _learned[i];
+		}
 	}
 }
 
