@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 17:13:55 by teando            #+#    #+#             */
-/*   Updated: 2025/08/22 17:23:34 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 04:15:30 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,4 @@
 
 class MateriaSource : public IMateriaSource {
 	
-}
+};
