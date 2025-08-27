@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 17:26:40 by teando            #+#    #+#             */
-/*   Updated: 2025/08/23 06:30:39 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/27 21:03:35 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ Character::Character(const Character &other) : _name(other._name) {
 	putLogLevel("Character", LOG_LV_WIDTH);
 	std::cerr << "Copy constructor called" << std::endl;
 	for (int i = 0; i < _inventorySize; i++) {
-		_inventory[i] = other._inventory[i]->clone();
+		if(other._inventory[i])
+			_inventory[i] = other._inventory[i]->clone();
+		else _inventory[i] = NULL;
 	}
 	*this = other;
 }

@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 05:43:12 by teando            #+#    #+#             */
-/*   Updated: 2025/08/23 06:33:05 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/27 21:03:06 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,3 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
 	}
 	return NULL;
 }
-
