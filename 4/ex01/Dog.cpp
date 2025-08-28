@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:30 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 17:31:00 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/28 22:31:04 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ Dog &Dog::operator=(const Dog &other) {
 	std::cerr << "Copy assignment operator called" << std::endl;
 	if (this != &other) {
 		Animal::operator=(other);
+		Brain* tmp = new Brain(*other._brain);
+		if (tmp == NULL) return *this;
 		delete _brain;
-		_brain = new Brain(*other._brain);
+		_brain = tmp;
 	}
 	return *this;
 }

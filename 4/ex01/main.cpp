@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:05:25 by teando            #+#    #+#             */
-/*   Updated: 2025/08/15 17:47:51 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/23 06:12:46 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int main() {
 	std::cout << "Original Dog's new Idea: " << original_dog->getBrain()->getIdea(0) << std::endl;
 	std::cout << "Copied Dog's Idea (should be unchanged): " << copied_dog->getBrain()->getIdea(0) << std::endl;
 
-	// check if the copied dog has its own brain
 	std::cout << "\n--- Delete original ---\n" << std::endl;
 	delete original_dog;
 
@@ -75,7 +74,7 @@ int main() {
 	cat1.getBrain()->setIdea(0, "I want to sleep.");
 
 	Cat cat2;
-	cat2 = cat1; // using assignment operator here
+	cat2 = cat1;
 
 	std::cout << "Cat1's Idea: " << cat1.getBrain()->getIdea(0) << std::endl;
 	std::cout << "Cat2's Idea: " << cat2.getBrain()->getIdea(0) << std::endl;
