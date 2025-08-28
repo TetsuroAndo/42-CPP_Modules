@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 00:33:45 by teando            #+#    #+#             */
-/*   Updated: 2025/08/29 01:10:01 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/29 01:47:29 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,14 @@ public:
 	void demoteGrade();
 
 public:
-	class GradeTooHighException : public std::exception {};
-	class GradeTooLowException : public std::exception {};
+	class GradeTooHighException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
+	class GradeTooLowException : public std::exception {
+	public:
+		const char *what() const throw();
+	};
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 01:13:17 by teando            #+#    #+#             */
-/*   Updated: 2025/08/29 01:21:57 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/29 01:48:11 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main() {
 
-	std::cout << "--- Testing Valid Bureaucrats ---" << std::endl;
+	std::cerr << "--- Testing Valid Bureaucrats ---" << std::endl;
 	try {
 		Bureaucrat validBureaucrat("Zaphod", 42);
 		std::cout << validBureaucrat << std::endl;
@@ -35,9 +35,9 @@ int main() {
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Error Case ===============================" << std::endl;
+	std::cerr << "\n=== Error Case ===============================" << std::endl;
 
-	std::cout << "\n--- Testing Grade Too High on Construction ---" << std::endl;
+	std::cerr << "\n--- Testing Grade Too High on Construction ---" << std::endl;
 	try {
 		Bureaucrat highGradeBureaucrat("Ford", 0);
 		std::cout << highGradeBureaucrat << std::endl;
@@ -45,7 +45,7 @@ int main() {
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n--- Testing Grade Too Low on Construction ---" << std::endl;
+	std::cerr << "\n--- Testing Grade Too Low on Construction ---" << std::endl;
 	try {
 		Bureaucrat lowGradeBureaucrat("Arthur", 151);
 		std::cout << lowGradeBureaucrat << std::endl;
@@ -53,7 +53,7 @@ int main() {
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n--- Testing promote from Highest Grade ---" << std::endl;
+	std::cerr << "\n--- Testing promote from Highest Grade ---" << std::endl;
 	try {
 		Bureaucrat topBureaucrat("Marvin", 1);
 		std::cout << topBureaucrat << std::endl;
@@ -63,7 +63,7 @@ int main() {
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n--- Testing demote from Lowest Grade ---" << std::endl;
+	std::cerr << "\n--- Testing demote from Lowest Grade ---" << std::endl;
 	try {
 		Bureaucrat bottomBureaucrat("Trillian", 150);
 		std::cout << bottomBureaucrat << std::endl;
