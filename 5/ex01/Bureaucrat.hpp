@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 00:33:45 by teando            #+#    #+#             */
-/*   Updated: 2025/08/29 01:47:29 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 02:42:59 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <ostream>
+#include "Form.hpp"
 
 class Bureaucrat {
 private:
@@ -33,6 +34,8 @@ public:
 
 	void promoteGrade();
 	void demoteGrade();
+
+	void signForm(class Form& Form) const;
 
 public:
 	class GradeTooHighException : public std::exception {
