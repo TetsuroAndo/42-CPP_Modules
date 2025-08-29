@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 21:46:46 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 02:43:15 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 03:15:53 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Form {
 private:
 	const std::string _name;
 	bool _isSigned;
-	int _reqSignGrade;
-	int _reqExecGrade;
+	const int _reqSignGrade;
+	const int _reqExecGrade;
 
 public:
 	Form();

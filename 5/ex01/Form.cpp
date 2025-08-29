@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 21:46:42 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 02:43:35 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 03:15:17 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ Form& Form::operator=(const Form& other) {
 	std::cerr << "[ Form ] " << this << " Name: " << other._name << " copy assignment operator called" << std::endl;
 	if (this != &other) {
 		_isSigned = other._isSigned;
-		_reqSignGrade = other._reqSignGrade;
-		_reqExecGrade = other._reqExecGrade;
 	}
 	return *this;
 }
