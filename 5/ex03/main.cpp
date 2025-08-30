@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 01:13:17 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 22:02:37 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 22:37:52 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,20 @@ int main() {
 		std::cout << "\n=== Test: Intern ===\n" << std::endl;
 		Intern someRandomIntern;
 		AForm* rrf;
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		//rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		rrf = someRandomIntern.makeForm("sleeping request", "Bender");
+		if (!rrf)
+			return 1;
 
 		rrf->beSigned(officer);
-
 		//rrf->execute(bob);
 		bob = officer;
 		rrf->execute(bob);
 
-		std::cout << "\n--- Destroy ---" << std::endl;
+		std::cerr << "\n--- Destroy ---" << std::endl;
 	} catch (const std::exception& e) {
 		std::cout << "Caught exception: " << e.what() << std::endl;
-		std::cout << "\n--- Destroy ---" << std::endl;
+		std::cerr << "\n--- Destroy ---" << std::endl;
 	}
 
 	return 0;

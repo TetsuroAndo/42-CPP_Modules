@@ -1,17 +1,16 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   Intern.cpp										 :+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: teando <teando@student.42tokyo.jp>		 +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2025/08/30 21:37:55 by teando			#+#	#+#			 */
-/*   Updated: 2025/08/30 21:55:19 by teando		   ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/30 22:17:16 by teando            #+#    #+#             */
+/*   Updated: 2025/08/30 22:31:47 by teando           ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-#include <map>
 
 Intern::Intern() {
 	std::cerr << "[ Intern ] " << this << " Default constructor called" << std::endl;
@@ -32,24 +31,29 @@ Intern::~Intern() {
 	std::cerr << "[ Intern ] " << this << " Destructor called" << std::endl;
 }
 
-static AForm* createPresidential(const std::string& t) { return new PresidentialPardonForm(t); }
-static AForm* createRobotomy(const std::string& t) { return new RobotomyRequestForm(t); }
-static AForm* createShrubbery(const std::string& t) { return new ShrubberyCreationForm(t); }
+static AForm* createPresidential(const std::string& t)	{ return new PresidentialPardonForm(t); }
+static AForm* createRobotomy(const std::string& t)		{ return new RobotomyRequestForm(t); }
+static AForm* createShrubbery(const std::string& t)		{ return new ShrubberyCreationForm(t); }
 
 AForm *Intern::makeForm(const std::string& formName, const std::string& target) {
-	typedef AForm* (*formCall)(const std::string&);
+	typedef AForm* (*formFunc)(const std::string&);
+	struct Entry {
+		const char* name;
+		formFunc create;
+	};
 
-	static std::map<std::string, formCall> type;
-	if (type.empty()) {
-		type["presidential pardon"] = &createPresidential;
-		type["robotomy request"] = &createRobotomy;
-		type["shrubbery creation"] = &createShrubbery;
+	static const Entry forms[] = {
+		{ "presidential pardon", &createPresidential },
+		{ "robotomy request",	&createRobotomy },
+		{ "shrubbery creation", &createShrubbery }
+	};
+
+	for (size_t i = 0; i < (sizeof(forms) / sizeof(forms[0])); ++i) {
+		if (formName == forms[i].name) {
+			std::cout << "Intern creates " << formName << std::endl;
+			return forms[i].create(target);
+		}
 	}
-
-	std::map<std::string, formCall>::const_iterator it = type.find(formName);
-	if (it != type.end())
-		return it->second(target);
-
-	std::cerr << "[ Intern ] " << this << " Unknown form type: " << formName << std::endl;
+	std::cout << "Intern " << " Unknown form " << formName << std::endl;
 	return NULL;
 }
