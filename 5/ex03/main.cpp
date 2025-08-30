@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 01:13:17 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 22:37:52 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 23:29:36 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ int main() {
 		AForm* rrf;
 		//rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 		rrf = someRandomIntern.makeForm("sleeping request", "Bender");
-		if (!rrf)
+		if (!rrf) {
+			std::cerr << "Intern failed to create form" << std::endl;
 			return 1;
+		}
 
 		rrf->beSigned(officer);
 		//rrf->execute(bob);

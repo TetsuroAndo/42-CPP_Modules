@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 01:13:17 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 21:34:52 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 22:18:46 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ int main() {
 		}
 		bob.executeForm(pardon);
 
-		std::cout << "\n--- Destroy ---" << std::endl;
+		std::cerr << "\n--- Destroy ---" << std::endl;
 	} catch (const std::exception& e) {
 		std::cout << "Caught exception: " << e.what() << std::endl;
-		std::cout << "\n--- Destroy ---" << std::endl;
+		std::cerr << "\n--- Destroy ---" << std::endl;
 	}
 
 	return 0;
