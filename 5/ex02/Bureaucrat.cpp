@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 00:33:47 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 18:10:40 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 19:12:37 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void Bureaucrat::demoteGrade() {
 		throw Bureaucrat::GradeTooLowException();
 }
 
-void Bureaucrat::signAForm(AForm& form) const {
+void Bureaucrat::signForm(AForm& form) const {
 	try {
 		std::cout << _name << " signs " << form.getName() << std::endl;
 		form.beSigned(*this);

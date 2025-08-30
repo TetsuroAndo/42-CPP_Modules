@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 00:33:45 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 19:05:00 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 19:12:37 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 	void promoteGrade();
 	void demoteGrade();
 
-	void signAForm(class AForm& form) const;
+	void signForm(class AForm& form) const;
 
 	void executeForm(AForm const & form) const;
 
