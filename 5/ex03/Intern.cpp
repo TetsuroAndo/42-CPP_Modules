@@ -37,19 +37,19 @@ static AForm* createRobotomy(const std::string& t) { return new RobotomyRequestF
 static AForm* createShrubbery(const std::string& t) { return new ShrubberyCreationForm(t); }
 
 AForm *Intern::makeForm(const std::string& formName, const std::string& target) {
-	typedef AForm* (*FactoryFunc)(const std::string&);
+	typedef AForm* (*formCall)(const std::string&);
 
-	static std::map<std::string, FactoryFunc> factories;
-	if (factories.empty()) {
-		factories["presidential pardon"] = &createPresidential;
-		factories["robotomy request"] = &createRobotomy;
-		factories["shrubbery creation"] = &createShrubbery;
+	static std::map<std::string, formCall> type;
+	if (type.empty()) {
+		type["presidential pardon"] = &createPresidential;
+		type["robotomy request"] = &createRobotomy;
+		type["shrubbery creation"] = &createShrubbery;
 	}
 
-	std::map<std::string, FactoryFunc>::const_iterator it = factories.find(formName);
-	if (it != factories.end())
+	std::map<std::string, formCall>::const_iterator it = type.find(formName);
+	if (it != type.end())
 		return it->second(target);
 
 	std::cerr << "[ Intern ] " << this << " Unknown form type: " << formName << std::endl;
-	return nullptr;
+	return NULL;
 }
