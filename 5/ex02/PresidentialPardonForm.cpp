@@ -6,36 +6,37 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:01:38 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 17:04:00 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:26:43 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-ProsidentialPardonForm::ProsidentialPardonForm(const std::string& target)
-	: AForm(target, ProsidentialPardonForm::SIGN_GRADE, ProsidentialPardonForm::EXEC_GRADE)
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
+	: AForm(target, PresidentialPardonForm::SIGN_GRADE, PresidentialPardonForm::EXEC_GRADE)
 {
-	std::cerr << "[ ProsidentialPardonForm ] " << this << " Target: " << target << " constructor called" << std::endl;
+	std::cerr << "[ PresidentialPardonForm ] " << this << " Target: " << target << " constructor called" << std::endl;
 }
 
-ProsidentialPardonForm::ProsidentialPardonForm(const ProsidentialPardonForm& other)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
 	: AForm(other)
 {
-	std::cerr << "[ ProsidentialPardonForm ] " << this << " Copy constructor called" << std::endl;
+	std::cerr << "[ PresidentialPardonForm ] " << this << " Copy constructor called" << std::endl;
 }
 
-ProsidentialPardonForm& ProsidentialPardonForm::operator=(const ProsidentialPardonForm& other) {
-	std::cerr << "[ ProsidentialPardonForm ] " << this << " Copy Assignment operator called" << std::endl;
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other) {
+	std::cerr << "[ PresidentialPardonForm ] " << this << " Copy Assignment operator called" << std::endl;
 	if (this != &other) {
 		AForm::operator=(other);
 	}
 	return *this;
 }
 
-ProsidentialPardonForm::~ProsidentialPardonForm() {
-	std::cerr << "[ ProsidentialPardonForm ] " << this << " Destructor called" << std::endl;
+PresidentialPardonForm::~PresidentialPardonForm() {
+	std::cerr << "[ PresidentialPardonForm ] " << this << " Destructor called" << std::endl;
 }
 
-void ProsidentialPardonForm::execute(Bureaucrat const & executor) const {
-
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
+	AForm::execute(executor);
+	std::cout << getName() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

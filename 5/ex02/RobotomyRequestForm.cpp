@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:05:28 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:23:04 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:12:54 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cerr << "[ RobotomyRequestForm ] " << this << " Destructor called" << std::endl;
 }
 
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
+	AForm::execute(executor);
+	std::cout << "Bzzzzzz... " << getName() << " has been robotomized successfully." << std::endl;
+}

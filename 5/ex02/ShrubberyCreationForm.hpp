@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:05:59 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 17:01:26 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:14:35 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 class ShrubberyCreationForm : public AForm {
 public:
-	const int SIGN_GRADE = 145;
-	const int EXEC_GRADE = 137;
+	static const int SIGN_GRADE = 145;
+	static const int EXEC_GRADE = 137;
 
 public:
 	ShrubberyCreationForm(const std::string& target);

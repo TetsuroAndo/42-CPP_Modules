@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:44:28 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 16:57:28 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:26:43 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 #include "AForm.hpp"
 
-class ProsidentialPardonForm : public AForm {
+class PresidentialPardonForm : public AForm {
 public:
-	const int SIGN_GRADE = 25;
-	const int EXEC_GRADE = 5;
+	static const int SIGN_GRADE = 25;
+	static const int EXEC_GRADE = 5;
 
 public:
-	ProsidentialPardonForm(const std::string& target);
-	ProsidentialPardonForm(const ProsidentialPardonForm& other);
-	ProsidentialPardonForm& operator=(const ProsidentialPardonForm& other);
-	virtual ~ProsidentialPardonForm();
+	PresidentialPardonForm(const std::string& target);
+	PresidentialPardonForm(const PresidentialPardonForm& other);
+	PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
+	virtual ~PresidentialPardonForm();
 
 	virtual void execute(Bureaucrat const & executor) const;
 };

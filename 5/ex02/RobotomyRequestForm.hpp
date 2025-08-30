@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:04:34 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 17:01:26 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:14:31 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 class
 RobotomyRequestForm : public AForm {
 public:
-	const int SIGN_GRADE = 72;
-	const int EXEC_GRADE = 45;
+	static const int SIGN_GRADE = 72;
+	static const int EXEC_GRADE = 45;
 
 public:
 	RobotomyRequestForm(const std::string& target);

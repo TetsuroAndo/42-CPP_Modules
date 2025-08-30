@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:06:55 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:23:07 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:13:10 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cerr << "[ ShrubberyCreationForm ] " << this << " Destructor called" << std::endl;
 }
 
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+	AForm::execute(executor);
+	std::cout << getName() << " has been shrubbery created." << std::endl;
+}
