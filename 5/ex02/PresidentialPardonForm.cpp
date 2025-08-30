@@ -6,17 +6,11 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:01:38 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:14:14 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 13:22:44 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-
-ProsidentialPardonForm::ProsidentialPardonForm()
-	: AForm("PresidentialPardonForm", ProsidentialPardonForm::SIGN_GRADE, ProsidentialPardonForm::EXEC_GRADE)
-{
-	std::cerr << "[ ProsidentialPardonForm ] " << this << " Default constructor called" << std::endl;
-}
 
 ProsidentialPardonForm::ProsidentialPardonForm(const std::string& target)
 	: AForm(target, ProsidentialPardonForm::SIGN_GRADE, ProsidentialPardonForm::EXEC_GRADE)

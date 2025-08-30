@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:04:34 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:13:25 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 13:22:59 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ public:
 	const int EXEC_GRADE = 45;
 
 public:
-	RobotomyRequestForm();
 	RobotomyRequestForm(const std::string& target);
 	RobotomyRequestForm(const RobotomyRequestForm& other);
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& other);

@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:05:59 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:12:39 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 13:23:14 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ public:
 	const int EXEC_GRADE = 137;
 
 public:
-	ShrubberyCreationForm();
 	ShrubberyCreationForm(const std::string& target);
 	ShrubberyCreationForm(const ShrubberyCreationForm& other);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);

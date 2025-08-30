@@ -6,17 +6,11 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:05:28 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:13:52 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 13:23:04 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-
-RobotomyRequestForm::RobotomyRequestForm()
-	: AForm("RobotomyRequestForm", RobotomyRequestForm::SIGN_GRADE, RobotomyRequestForm::EXEC_GRADE)
-{
-	std::cerr << "[ RobotomyRequestForm ] " << this << " Default constructor called" << std::endl;
-}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
 	: AForm(target, RobotomyRequestForm::SIGN_GRADE, RobotomyRequestForm::EXEC_GRADE)
