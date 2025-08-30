@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 01:13:17 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 23:29:36 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/31 01:18:23 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int main() {
 		std::cout << "\n=== Test: Intern ===\n" << std::endl;
 		Intern someRandomIntern;
 		AForm* rrf;
-		//rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		rrf = someRandomIntern.makeForm("sleeping request", "Bender");
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		// rrf = someRandomIntern.makeForm("sleeping request", "Bender");
 		if (!rrf) {
 			std::cerr << "Intern failed to create form" << std::endl;
 			return 1;
@@ -47,6 +47,8 @@ int main() {
 		rrf->execute(bob);
 
 		std::cerr << "\n--- Destroy ---" << std::endl;
+		delete rrf;
+
 	} catch (const std::exception& e) {
 		std::cout << "Caught exception: " << e.what() << std::endl;
 		std::cerr << "\n--- Destroy ---" << std::endl;
