@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 00:33:45 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 12:41:17 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 16:46:33 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #include <iostream>
 #include <ostream>
-#include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat {
 private:

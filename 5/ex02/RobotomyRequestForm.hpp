@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:04:34 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:22:59 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 17:01:26 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "AForm.hpp"
 
-class 
+class
 RobotomyRequestForm : public AForm {
 public:
 	const int SIGN_GRADE = 72;
@@ -26,5 +26,5 @@ public:
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
 	virtual ~RobotomyRequestForm();
 
-	virtual void execute(const Bureaucrat& executor) const;
+	virtual void execute(Bureaucrat const & executor) const;
 };

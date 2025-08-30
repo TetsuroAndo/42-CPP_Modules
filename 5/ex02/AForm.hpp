@@ -6,15 +6,14 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 21:46:46 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:14:56 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 17:01:26 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-
-class Bureaucrat;
+#include "Bureaucrat.hpp"
 
 class AForm {
 private:
@@ -37,7 +36,7 @@ public:
 	virtual int getReqExecGrade() const;
 
 	virtual void beSigned(const Bureaucrat& bureaucrat);
-	virtual void execute(const Bureaucrat& executor) const = 0;
+	virtual void execute(Bureaucrat const & executor) const = 0;
 
 public:
 	class GradeTooHighException : public std::exception {

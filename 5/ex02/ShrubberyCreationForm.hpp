@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:05:59 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:23:14 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 17:01:26 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ public:
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
 	virtual ~ShrubberyCreationForm();
 
-	virtual void execute(const Bureaucrat& executor) const;
+	virtual void execute(Bureaucrat const & executor) const;
 };
-

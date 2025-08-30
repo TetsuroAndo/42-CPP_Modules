@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:01:38 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:22:44 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 17:04:00 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,8 @@ ProsidentialPardonForm& ProsidentialPardonForm::operator=(const ProsidentialPard
 
 ProsidentialPardonForm::~ProsidentialPardonForm() {
 	std::cerr << "[ ProsidentialPardonForm ] " << this << " Destructor called" << std::endl;
+}
+
+void ProsidentialPardonForm::execute(Bureaucrat const & executor) const {
+
 }

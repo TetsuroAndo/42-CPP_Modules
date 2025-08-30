@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "AForm.hpp"
-#include "Bureaucrat.hpp"
 
 AForm::AForm()
 	: _name("Default"), _isSigned(false), _reqSignGrade(42), _reqExecGrade(21) {

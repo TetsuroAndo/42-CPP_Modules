@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:44:28 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 13:22:47 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 16:57:28 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ public:
 	ProsidentialPardonForm& operator=(const ProsidentialPardonForm& other);
 	virtual ~ProsidentialPardonForm();
 
-	virtual void execute(const Bureaucrat& executor) const;
+	virtual void execute(Bureaucrat const & executor) const;
 };

@@ -6,11 +6,12 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 00:33:47 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 12:42:16 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/30 16:46:43 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {
 	std::cerr << "[ Bureaucrat ] " << this << " Default constructor called" << std::endl;
