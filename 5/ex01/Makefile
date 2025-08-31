@@ -6,13 +6,13 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/08/30 02:44:28 by teando           ###   ########.fr        #
+#    Updated: 2025/08/31 09:00:33 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= a.out
 CXX		:= c++
-CXXFLAG	:= -Wall -Wextra -Werror -std=c++98
+CXXFLAG	:= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM		:= rm -rf
 SRC		:= main.cpp Bureaucrat.cpp Form.cpp
 OBJDIR	:= obj

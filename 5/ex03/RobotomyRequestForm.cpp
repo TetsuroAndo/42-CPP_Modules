@@ -6,12 +6,21 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:05:28 by teando            #+#    #+#             */
-/*   Updated: 2025/08/30 21:31:03 by teando           ###   ########.fr       */
+/*   Updated: 2025/08/31 09:19:57 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
+#include <ctime>
+
+namespace {
+	unsigned int getTimeSeed()
+	{
+		unsigned long seed = static_cast<unsigned long>(std::clock());
+		return static_cast<unsigned int>(seed);
+	}
+}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
 	: AForm(target, RobotomyRequestForm::SIGN_GRADE, RobotomyRequestForm::EXEC_GRADE)
@@ -37,17 +46,9 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cerr << "[ RobotomyRequestForm ] " << this << " Destructor called" << std::endl;
 }
 
-static unsigned int getMicroSecSeed()
-{
-	struct timespec ts;
-	clock_gettime(CLOCK_MONOTONIC, &ts);
-	unsigned long long micros = ts.tv_sec * 1000000ULL + ts.tv_nsec / 1000ULL;
-	return static_cast<unsigned int>(micros & 0xFFFFFFFFU);
-}
-
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	AForm::execute(executor);
-	std::srand(getMicroSecSeed());
+	std::srand(getTimeSeed());
 	if (std::rand() % 2 == 0) {
 		std::cout << "Bzzzzzz... " << getName() << " has been robotomized successfully." << std::endl;
 	} else {
