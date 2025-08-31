@@ -6,7 +6,7 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/08/31 09:37:27 by teando           ###   ########.fr        #
+#    Updated: 2025/08/31 20:52:12 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	:= convert
 CXX		:= c++
 CXXFLAG	:= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM		:= rm -rf
-SRC		:= main.cpp 
+SRC		:= main.cpp ScalarConverter.cpp
 OBJDIR	:= obj
 OBJ		:= $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 
