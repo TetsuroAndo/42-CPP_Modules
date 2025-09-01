@@ -6,14 +6,13 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 09:38:36 by teando            #+#    #+#             */
-/*   Updated: 2025/09/01 14:06:12 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/01 14:12:32 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include <iostream>
-# include <sstream>
 # include <limits>
 # include <cstdlib>
 

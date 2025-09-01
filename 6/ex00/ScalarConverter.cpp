@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 09:39:02 by teando            #+#    #+#             */
-/*   Updated: 2025/09/01 14:09:47 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/01 14:15:35 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& rhs) { (void)
 ScalarConverter::~ScalarConverter() {}
 
 namespace {
-	std::string trim(const std::string& str) {
-		const size_t first = str.find_first_not_of(" \t\n\r");
+	std::string trim(const std::string& s) {
+		const size_t first = s.find_first_not_of(" \t\n\r");
 		if (std::string::npos == first) {
 			return "";
 		}
-		const size_t last = str.find_last_not_of(" \t\n\r");
-		return str.substr(first, (last - first + 1));
+		const size_t last = s.find_last_not_of(" \t\n\r");
+		return s.substr(first, (last - first + 1));
 	}
 
 	bool isNan(double d) { return d != d; }
@@ -71,7 +71,6 @@ namespace {
 		std::cout << std::endl;
 	}
 
-
 	bool parseInput(const std::string& in, double& out) {
 		std::string l = trim(in);
 		if (l.empty()) return false;
@@ -114,7 +113,7 @@ void ScalarConverter::convert(const std::string& in) {
 		printFloat(d);
 		printDouble(d);
 	} else {
-	std::cout
+		std::cout
 		<< "char: impossible\n"
 		<< "int: impossible\n"
 		<< "float: impossible\n"
