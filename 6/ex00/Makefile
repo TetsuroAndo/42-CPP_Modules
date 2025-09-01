@@ -6,7 +6,7 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/08/31 20:52:12 by teando           ###   ########.fr        #
+#    Updated: 2025/09/01 15:16:20 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ		:= $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 all: $(NAME)
 
 run: $(NAME)
-	./$(NAME)
+	./$(NAME) 42
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAG) -o $@ $^
