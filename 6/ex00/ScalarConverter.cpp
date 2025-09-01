@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 09:39:02 by teando            #+#    #+#             */
-/*   Updated: 2025/09/01 13:24:41 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/01 13:28:03 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,16 @@ ScalarConverter::~ScalarConverter() {
 }
 
 namespace {
+	std::string strTrim(const std::string& s) {
+		size_t start = 0;
+		while (start < s.length() && std::isspace(s[start]))
+			++start;
+		size_t end = s.length();
+		while (end > start && std::isspace(s[end - 1]))
+			--end;
+		return s.substr(start, end - start);
+	}
+
 	bool isNan(double d) { return d != d; }
 	bool isInf(double d) { return d == std::numeric_limits<double>::infinity() || d == -std::numeric_limits<double>::infinity(); }
 
@@ -79,20 +89,10 @@ namespace {
 				std::cout << d << std::endl;
 		}
 	}
-
-	std::string trim(const std::string& s) {
-		size_t start = 0;
-		while (start < s.length() && std::isspace(s[start]))
-			++start;
-		size_t end = s.length();
-		while (end > start && std::isspace(s[end - 1]))
-			--end;
-		return s.substr(start, end - start);
-	}
 }
 
 void ScalarConverter::convert(const std::string& in) {
-	std::string l = trim(in);
+	std::string l = strTrim(in);
 
 	if (l == "-inff" || l == "-inf") {
 		printChar(-std::numeric_limits<double>::infinity());
@@ -125,7 +125,10 @@ void ScalarConverter::convert(const std::string& in) {
 	} else {
 		char* endptr = NULL;
 		d = std::strtod(l.c_str(), &endptr);
-		validNum = endptr != l.c_str() && (*endptr == '\0' || (*endptr == 'f' && *(endptr + 1) == '\0'));
+		validNum = (
+			endptr != l.c_str() &&
+			(*endptr == '\0' || (*endptr == 'f' && *(endptr + 1) == '\0'))
+		);
 	}
 
 	if (validNum) {
