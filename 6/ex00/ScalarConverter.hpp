@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 09:38:36 by teando            #+#    #+#             */
-/*   Updated: 2025/09/01 14:12:32 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/01 14:17:53 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ private:
 
 public:
 	static void convert(const std::string& in);
-	
+
 };
