@@ -6,30 +6,19 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 09:39:02 by teando            #+#    #+#             */
-/*   Updated: 2025/09/01 13:28:03 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/01 13:52:34 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter() {
-	std::cout << "[ ScalarConverter: " << this << " ] Default constructor called" << std::endl;
-}
-ScalarConverter::ScalarConverter(const ScalarConverter& other) {
-	std::cout << "[ ScalarConverter: " << this << " ] Copy constructor called" << std::endl;
-	(void)other;
-}
-ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) {
-	std::cout << "[ ScalarConverter: " << this << " ] Copy assignment constructor called" << std::endl;
-	(void)other;
-	return *this;
-}
-ScalarConverter::~ScalarConverter() {
-	std::cout << "[ ScalarConverter: " << this << " ] Destructor called" << std::endl;
-}
+ScalarConverter::ScalarConverter() {}
+ScalarConverter::ScalarConverter(const ScalarConverter& src) { (void)src; }
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& rhs) { (void)rhs; return *this; }
+ScalarConverter::~ScalarConverter() {}
 
 namespace {
-	std::string strTrim(const std::string& s) {
+	std::string trim(const std::string& s) {
 		size_t start = 0;
 		while (start < s.length() && std::isspace(s[start]))
 			++start;
@@ -92,7 +81,7 @@ namespace {
 }
 
 void ScalarConverter::convert(const std::string& in) {
-	std::string l = strTrim(in);
+	std::string l = trim(in);
 
 	if (l == "-inff" || l == "-inf") {
 		printChar(-std::numeric_limits<double>::infinity());
