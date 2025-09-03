@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 23:52:15 by teando            #+#    #+#             */
-/*   Updated: 2025/09/04 00:03:00 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/04 00:35:47 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,23 @@ Span& Span::operator=(const Span& other) {
 Span::~Span() {}
 
 void Span::addNumber(int n) {
-	
+
 }
 
 int Span::shortestSpan() const {
-	
+
 }
 
 int Span::longestSpan() const {
-	
+
+}
+
+template <typename T>
+void addRange(T begin, T end) {
+	for (T it = begin; it != end; ++it) {
+		if (_vec.size() >= _N) {
+			throw std::out_of_range("Span is full");
+		}
+		Span::addNumber(*it);
+	}
 }
