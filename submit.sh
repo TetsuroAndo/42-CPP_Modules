@@ -30,11 +30,16 @@ pushd "$MODULE_DIR" >/dev/null
 
 # 2. make test 実行
 echo "Running tests..."
-if ! make test; then
-  echo "Error: Tests failed. Aborting submission." >&2
-  popd >/dev/null
-  exit 1
-fi
+for exdir in ex*; do
+  if [ -d "$exdir" ] && [ -f "$exdir/Makefile" ]; then
+    echo "Testing $exdir..."
+    if ! make -C "$exdir" test; then
+      echo "Error: Tests failed in $exdir. Aborting submission." >&2
+      popd >/dev/null
+      exit 1
+    fi
+  fi
+done
 
 # 3. 一時的 Git 初期化
 TEMP_GIT_CREATED=false
