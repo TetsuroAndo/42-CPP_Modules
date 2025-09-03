@@ -6,7 +6,7 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 06:51:47 by teando            #+#    #+#              #
-#    Updated: 2025/09/03 14:25:59 by teando           ###   ########.fr        #
+#    Updated: 2025/09/03 15:20:59 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,8 @@ debug: DEFINE	:=
 debug: fclean
 	$(MAKE) $(NAME) -j $(shell nproc)
 
-test: r check fclean
+test: r check
+	$(MAKE) fclean
 
 # ============= BUILDS RULES =============
 
