@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 23:52:19 by teando            #+#    #+#             */
-/*   Updated: 2025/09/04 00:35:12 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/04 00:57:25 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <stdexcept>
+#include <limits>
 
 class Span {
 private:
@@ -30,6 +33,7 @@ public:
 	void addNumber(int n);
 	int shortestSpan() const;
 	int longestSpan() const;
+
+	template <typename T> void addRange(T begin, T end);
 };
 
-template <typename T> void addRange(T begin, T end);
