@@ -22,11 +22,21 @@ MODULE_DIR="$ROOT_DIR/$MODULE"
 [[ -d "$MODULE_DIR" ]] \
   || { echo "Error: directory '$MODULE_DIR' not found." >&2; exit 1; }
 
-# 2. 空ディレクトリに .gitkeep を配置（任意）
+# 空ディレクトリに .gitkeep を配置 (optional)
 # [[ -x "$ROOT_DIR/fillEmptyDir.sh" ]] && "$ROOT_DIR/fillEmptyDir.sh" "$MODULE_DIR"
 
-# 3. 一時的 Git 初期化
+# モジュールディレクトリに移動
 pushd "$MODULE_DIR" >/dev/null
+
+# 2. make test 実行
+echo "Running tests..."
+if ! make test; then
+  echo "Error: Tests failed. Aborting submission." >&2
+  popd >/dev/null
+  exit 1
+fi
+
+# 3. 一時的 Git 初期化
 TEMP_GIT_CREATED=false
 if [[ ! -d .git ]]; then
   git init -q
