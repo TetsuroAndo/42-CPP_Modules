@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 06:11:30 by teando            #+#    #+#             */
-/*   Updated: 2025/09/04 08:36:12 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/04 18:08:59 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,29 @@ int main()
 			std::cout << *it << std::endl;
 			++it;
 		}
+	}
+
+	std::cout << "\n--- Testing MutantStack with const_iterator ---" << std::endl;
+	{
+		MutantStack<int> mstack;
+		mstack.push(10);
+		mstack.push(20);
+		mstack.push(30);
+		mstack.push(40);
+
+		const MutantStack<int>& const_mstack = mstack;
+		MutantStack<int>::const_iterator cit = const_mstack.begin();
+		MutantStack<int>::const_iterator cite = const_mstack.end();
+		mstack.push(50);
+		// const_mstack.push(50); // This should cause a compile-time error if uncommented
+
+		std::cout << "Iterating through MutantStack (const):" << std::endl;
+		while (cit != cite)
+		{
+			std::cout << *cit << std::endl;
+			++cit;
+		}
+		
 	}
 
 	return 0;

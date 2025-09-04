@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 06:12:25 by teando            #+#    #+#             */
-/*   Updated: 2025/09/04 08:33:56 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/04 17:58:27 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ public:
 	~MutantStack() {}
 
 	typedef typename std::stack<T>::container_type::iterator iterator;
+	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
 	iterator begin() { return std::stack<T>::c.begin(); }
 	iterator end() { return std::stack<T>::c.end(); }
+	const_iterator begin() const { return std::stack<T>::c.begin(); }
+	const_iterator end() const { return std::stack<T>::c.end(); }
 };

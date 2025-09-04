@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 23:52:19 by teando            #+#    #+#             */
-/*   Updated: 2025/09/04 04:56:35 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/04 17:54:33 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ public:
 		if (static_cast<unsigned int>(std::distance(begin, end)) + _vec.size() > _n) {
 			throw std::out_of_range("Cannot add range: not enough capacity.");
 		}
-		// 指定されたイテレータ範囲の要素をコンテナの末尾に挿入
 		_vec.insert(_vec.end(), begin, end);
 	}
 };
