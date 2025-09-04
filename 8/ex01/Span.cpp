@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 23:52:15 by teando            #+#    #+#             */
-/*   Updated: 2025/09/04 04:57:28 by teando           ###   ########.fr       */
+/*   Updated: 2025/09/04 17:51:53 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,11 @@ unsigned int Span::shortestSpan() const {
 		throw std::logic_error("Not enough numbers to find a span.");
 	}
 
-	// 内部コンテナのコピーを作成してソートする（元の順序を保持する場合）
-	// もしくは、元のコンテナを直接ソートしても良い
 	std::vector<int> sortedNumbers = _vec;
 	std::sort(sortedNumbers.begin(), sortedNumbers.end());
 
 	unsigned int minSpan = std::numeric_limits<unsigned int>::max();
 
-	// ソート済みのベクターで隣接する要素の差を計算
 	for (size_t i = 1; i < sortedNumbers.size(); ++i) {
 		unsigned int span = sortedNumbers[i] - sortedNumbers[i - 1];
 		if (span < minSpan) {
