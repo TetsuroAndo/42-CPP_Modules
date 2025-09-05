@@ -7,7 +7,7 @@
 
 set -euo pipefail
 
-# 1. 引数チェック
+# 引数チェック
 if [[ $# -ne 2 ]]; then
   echo "Usage: $0 <module_number> <repository_url>" >&2
   exit 1
@@ -28,7 +28,7 @@ MODULE_DIR="$ROOT_DIR/$MODULE"
 # モジュールディレクトリに移動
 pushd "$MODULE_DIR" >/dev/null
 
-# 2. make test 実行
+# make test 実行
 echo "Running tests..."
 for exdir in ex*; do
   if [ -d "$exdir" ] && [ -f "$exdir/Makefile" ]; then
@@ -41,51 +41,18 @@ for exdir in ex*; do
   fi
 done
 
-# 3. 一時的 Git 初期化
-TEMP_GIT_CREATED=false
-if [[ ! -d .git ]]; then
-  git init -q
-  TEMP_GIT_CREATED=true
+# 一時的なリモートを追加
+TEMP_REMOTE="temp-remote"
+if git remote | grep -qx "$TEMP_REMOTE"; then
+  git remote remove "$TEMP_REMOTE"
 fi
+git remote add "$TEMP_REMOTE" "$REPO_URL"
 
-# 4. リモート origin 設定
-if git remote | grep -qx origin; then
-  git remote set-url origin "$REPO_URL"
-else
-  git remote add origin "$REPO_URL"
-fi
-git checkout -B master -q
+# subtree push
+git subtree push --prefix="$MODULE" "$TEMP_REMOTE" master
 
-# 5. .gitignore (初回のみ)
-if [[ ! -f .gitignore ]]; then
-cp "$ROOT_DIR/.gitignore" .
-GITIGNORE_CREATED=true
-fi
-
-# 6. コミット & プッシュ
-git add -A
-if git diff --cached --quiet; then
-  echo "No changes to commit."
-else
-  git commit -m "Auto-submit C++ Module ${MODULE}" -q
-fi
-
-# ブランチ履歴が無い場合は --force が不要／既にある場合は FF が通る限り通常 push
-# もし履歴が繋がらず push が失敗した場合に限り --force-with-lease を再試行
-if ! git push -u origin master; then
-  echo "Non-fast-forward, retrying with --force-with-lease..."
-  git push -u origin master --force-with-lease
-fi
-
-# 7. 後始末: 一時的に作った .git / .gitignore を掃除
-if $TEMP_GIT_CREATED; then
-  rm -rf .git
-  echo "Temporary .git removed."
-fi
-if $GITIGNORE_CREATED; then
-  rm -f .gitignore
-  echo "Temporary .gitignore removed."
-fi
+# Tempリモート削除
+git remote remove "$TEMP_REMOTE"
 
 popd >/dev/null
 echo "✔ Module ${MODULE} successfully pushed to ${REPO_URL}"
