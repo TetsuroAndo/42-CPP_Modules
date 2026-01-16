@@ -44,7 +44,7 @@ run: $(NAME)
 	./$(NAME) $(ARG)
 
 1:	$(NAME)
-	./$(NAME) $(ARG) 2&>/dev/null
+	./$(NAME) $(ARG) 2>/dev/null
 
 # fast build
 f:
