@@ -41,18 +41,18 @@ for exdir in ex*; do
   fi
 done
 
-# 一時的なリモートを追加
-TEMP_REMOTE="temp-remote"
-if git remote | grep -qx "$TEMP_REMOTE"; then
-  git remote remove "$TEMP_REMOTE"
-fi
-git remote add "$TEMP_REMOTE" "$REPO_URL"
+# ex* ディレクトリだけを一時リポジトリにコピーして push
+TMPDIR=$(mktemp -d)
+trap 'rm -rf "$TMPDIR"' EXIT
 
-# subtree push
-git subtree push --prefix="$MODULE" "$TEMP_REMOTE" master
+for exdir in ex*; do
+  [ -d "$exdir" ] && cp -r "$exdir" "$TMPDIR/"
+done
 
-# Tempリモート削除
-git remote remove "$TEMP_REMOTE"
+git -C "$TMPDIR" init -b master
+git -C "$TMPDIR" add -A
+git -C "$TMPDIR" commit -m "Submit CPP Module $MODULE"
+git -C "$TMPDIR" push -f "$REPO_URL" master
 
 popd >/dev/null
 echo "✔ Module ${MODULE} successfully pushed to ${REPO_URL}"
