@@ -1,0 +1,3 @@
+[submodule "9/42-merge-insertion-sort"]
+	path = 9/42-merge-insertion-sort
+	url = git@github.com:TetsuroAndo/42-merge-insertion-sort.git
